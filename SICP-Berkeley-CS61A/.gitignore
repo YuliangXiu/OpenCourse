@@ -1,0 +1,6 @@
+*.scm
+scheme
+*.pdf
+*.py
+slides/
+__pycache__/

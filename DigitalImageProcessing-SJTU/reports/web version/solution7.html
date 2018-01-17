@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>prob7</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js Dark theme for JavaScript, CSS and HTML
+ * Based on the slides of the talk “/Reg(exp){2}lained/”
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: white;
+	background: none;
+	text-shadow: 0 -.1em .2em black;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+pre[class*="language-"],
+:not(pre) > code[class*="language-"] {
+	background: hsl(30, 20%, 25%);
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border: .3em solid hsl(30, 20%, 40%);
+	border-radius: .5em;
+	box-shadow: 1px 1px .5em black inset;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .15em .2em .05em;
+	border-radius: .3em;
+	border: .13em solid hsl(30, 20%, 40%);
+	box-shadow: 1px 1px .3em -.1em black inset;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: hsl(30, 20%, 50%);
+}
+
+.token.punctuation {
+	opacity: .7;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+	color: hsl(350, 40%, 70%);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: hsl(75, 70%, 60%);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: hsl(40, 90%, 60%);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: hsl(350, 40%, 70%);
+}
+
+.token.regex,
+.token.important {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.token.deleted {
+	color: red;
+}
+</style>
+
+<style type="text/css">
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		pointer-events: none;
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
+</style>
+
+<style type="text/css">
+div.prism-show-language {
+	position: relative;
+}
+
+div.prism-show-language > div.prism-show-language-label {
+	color: black;
+	background-color: #CFCFCF;
+	display: inline-block;
+	position: absolute;
+	bottom: auto;
+	left: auto;
+	top: 0;
+	right: 0;
+	width: auto;
+	height: auto;
+	font-size: 0.9em;
+	border-radius: 0 0 0 5px;
+	padding: 0 0.5em;
+	text-shadow: none;
+	z-index: 1;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-transform: none;
+	-moz-transform: none;
+	-ms-transform: none;
+	-o-transform: none;
+	transform: none;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0"><center>Digital Image Processing</center></h1>
+
+<p><h6 align='center'>BB1603391 116033910045 修宇亮</p>
+
+<h2 id="toc_1">Problem 7 Requirement 1</h2>
+
+<p><img src="http://xiublog.qiniudn.com/image/2016-12-21-111141.jpg" alt=""></p>
+
+<h2 id="toc_2">Problem  solution 1</h2>
+
+<h3 id="toc_3">im2jpeg.m</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">function y = im2jpeg(x, quality) 
+%IM2JPEG Compresses an image using a JPEG approximation.
+%   Y = IM2JPEG(X, QUALITY) compresses image X based on 8 x 8 DCT
+%   transforms, coefficient quantization, and Huffman symbol
+%   coding. Input QUALITY determines the amount of information that
+%   is lost and compression achieved.  Y is an encoding structure
+%   containing fields: 
+%
+%      Y.size      Size of X
+%      Y.numblocks Number of 8-by-8 encoded blocks
+%      Y.quality   Quality factor (as percent)
+%      Y.huffman   Huffman encoding structure, as returned by
+%                  MAT2HUFF
+%
+%   See also JPEG2IM.
+
+%   Copyright 2002-2006 R. C. Gonzalez, R. E. Woods, &amp; S. L. Eddins
+%   Digital Image Processing Using MATLAB, Prentice-Hall, 2004
+%   $Revision: 1.5 $  $Date: 2006/07/15 20:44:34 $
+%
+%   Revised: 3/20/06 by R.Woods to correct an &#39;eob&#39; coding problem, to
+%   check the &#39;quality&#39; input for &lt;= 0, and to fix a warning when
+%   struct y is created.
+
+error(nargchk(1, 2, nargin));             % Check input arguments
+if ndims(x) ~= 2 | ~isreal(x) | ~isnumeric(x) | ~isa(x, &#39;uint8&#39;)
+   error(&#39;The input must be a UINT8 image.&#39;);  
+end
+if nargin ==2 &amp;&amp; quality &lt;= 0
+   error(&#39;Input parameter QUALITY must be greater than zero.&#39;);
+end
+if nargin &lt; 2    
+   quality = 1;   % Default value for quality.
+end       
+
+m = [16 11  10  16  24  40  51  61        % JPEG normalizing array
+     12  12  14  19  26  58  60  55       % and zig-zag redordering
+     14  13  16  24  40  57  69  56       % pattern.
+     14  17  22  29  51  87  80  62
+     18  22  37  56  68  109 103 77
+     24  35  55  64  81  104 113 92
+     49  64  78  87  103 121 120 101
+     72  92  95  98  112 100 103 99] * quality;
+
+order = [1 9  2  3  10 17 25 18 11 4  5  12 19 26 33  ...
+        41 34 27 20 13 6  7  14 21 28 35 42 49 57 50  ...
+        43 36 29 22 15 8  16 23 30 37 44 51 58 59 52  ...
+        45 38 31 24 32 39 46 53 60 61 54 47 40 48 55  ...
+        62 63 56 64];
+
+[xm, xn] = size(x);                % Get input size.
+x = double(x) - 128;               % Level shift input
+t = dctmtx(8);                     % Compute 8 x 8 DCT matrix
+
+% Compute DCTs of 8x8 blocks and quantize the coefficients.
+y = blkproc(x, [8 8], &#39;P1 * x * P2&#39;, t, t&#39;);
+y = blkproc(y, [8 8], &#39;round(x ./ P1)&#39;, m);
+
+y = im2col(y, [8 8], &#39;distinct&#39;);  % Break 8x8 blocks into columns
+xb = size(y, 2);                   % Get number of blocks
+y = y(order, :);                   % Reorder column elements
+
+eob = max(y(:)) + 1;               % Create end-of-block symbol
+r = zeros(numel(y) + size(y, 2), 1);
+count = 0;
+for j = 1:xb                       % Process 1 block (col) at a time
+   i = max(find(y(:, j)));         % Find last non-zero element
+   if isempty(i)                   % No nonzero block values
+      i = 0;
+   end
+   p = count + 1;
+   q = p + i;
+   r(p:q) = [y(1:i, j); eob];      % Truncate trailing 0&#39;s, add EOB,
+   count = count + i + 1;          % and add to output vector
+end
+
+r((count + 1):end) = [];           % Delete unusued portion of r
+   
+y           = struct;
+y.size      = uint16([xm xn]);
+y.numblocks = uint16(xb);
+y.quality   = uint16(quality * 100);
+y.huffman   = mat2huff(r);</code></pre></div>
+
+<h3 id="toc_4">jpeg2im.m</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">function x = jpeg2im(y) 
+%JPEG2IM Decodes an IM2JPEG compressed image.
+%   X = JPEG2IM(Y) decodes compressed image Y, generating
+%   reconstructed approximation X.  Y is a structure generated by
+%   IM2JPEG. 
+%
+%   See also IM2JPEG.
+
+%   Copyright 2002-2004 R. C. Gonzalez, R. E. Woods, &amp; S. L. Eddins
+%   Digital Image Processing Using MATLAB, Prentice-Hall, 2004
+%   $Revision: 1.4 $  $Date: 2003/10/26 18:39:08 $
+
+error(nargchk(1, 1, nargin));             % Check input arguments
+
+m = [16 11  10  16  24  40  51  61        % JPEG normalizing array
+     12  12  14  19  26  58  60  55       % and zig-zag reordering
+     14  13  16  24  40  57  69  56       % pattern.
+     14  17  22  29  51  87  80  62
+     18  22  37  56  68  109 103 77
+     24  35  55  64  81  104 113 92
+     49  64  78  87  103 121 120 101
+     72  92  95  98  112 100 103 99];
+
+order = [1 9  2  3  10 17 25 18 11 4  5  12 19 26 33  ...
+        41 34 27 20 13 6  7  14 21 28 35 42 49 57 50  ...
+        43 36 29 22 15 8  16 23 30 37 44 51 58 59 52  ...
+        45 38 31 24 32 39 46 53 60 61 54 47 40 48 55  ...
+        62 63 56 64];
+rev = order;                          % Compute inverse ordering
+for k = 1:length(order)
+   rev(k) = find(order == k);
+end
+
+m = double(y.quality) / 100 * m;      % Get encoding quality.
+xb = double(y.numblocks);             % Get x blocks.
+sz = double(y.size);
+xn = sz(2);                           % Get x columns.
+xm = sz(1);                           % Get x rows.
+x = huff2mat(y.huffman);              % Huffman decode.
+eob = max(x(:));                      % Get end-of-block symbol
+
+z = zeros(64, xb);   k = 1;           % Form block columns by copying
+for j = 1:xb                          % successive values from x into
+   for i = 1:64                       % columns of z, while changing
+      if x(k) == eob                  % to the next column whenever
+         k = k + 1;   break;          % an EOB symbol is found.
+      else
+         z(i, j) = x(k);
+         k = k + 1;
+      end
+   end
+end
+
+z = z(rev, :);                                 % Restore order
+x = col2im(z, [8 8], [xm xn], &#39;distinct&#39;);     % Form matrix blocks
+x = blkproc(x, [8 8], &#39;x .* P1&#39;, m);           % Denormalize DCT
+t = dctmtx(8);                                 % Get 8 x 8 DCT matrix
+x = blkproc(x, [8 8], &#39;P1 * x * P2&#39;, t&#39;, t);   % Compute block DCT-1
+x = uint8(x + 128);                            % Level shift</code></pre></div>
+
+<h3 id="toc_5">mat2huff.m</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">function y = mat2huff(x)
+%MAT2HUFF Huffman encodes a matrix.
+%   Y = MAT2HUFF(X) Huffman encodes matrix X using symbol
+%   probabilities in unit-width histogram bins between X&#39;s minimum
+%   and maximum values. The encoded data is returned as a structure
+%   Y: 
+%      Y.code   The Huffman-encoded values of X, stored in
+%               a uint16 vector.  The other fields of Y contain
+%               additional decoding information, including:
+%      Y.min    The minimum value of X plus 32768
+%      Y.size   The size of X
+%      Y.hist   The histogram of X
+%
+%   If X is logical, uint8, uint16, uint32, int8, int16, or double,
+%   with integer values, it can be input directly to MAT2HUFF. The
+%   minimum value of X must be representable as an int16.  
+%
+%   If X is double with non-integer values---for example, an image
+%   with values between 0 and 1---first scale X to an appropriate
+%   integer range before the call. For example, use Y =
+%   MAT2HUFF(255*X) for 256 gray level encoding.   
+%
+%   NOTE: The number of Huffman code words is round(max(X(:))) -
+%   round(min(X(:))) + 1.  You may need to scale input X to generate
+%   codes of reasonable length.  The maximum row or column dimension
+%   of X is 65535. 
+%
+%   See also HUFF2MAT.
+
+%   Copyright 2002-2004 R. C. Gonzalez, R. E. Woods, &amp; S. L. Eddins
+%   Digital Image Processing Using MATLAB, Prentice-Hall, 2004
+%   $Revision: 1.5 $  $Date: 2003/11/21 15:21:12 $
+
+if ndims(x) ~= 2 | ~isreal(x) | (~isnumeric(x) &amp; ~islogical(x))
+   error(&#39;X must be a 2-D real numeric or logical matrix.&#39;);
+end
+
+% Store the size of input x.
+y.size = uint32(size(x));
+
+% Find the range of x values and store its minimum value biased
+% by +32768 as a UINT16.
+x = round(double(x));
+xmin = min(x(:));
+xmax = max(x(:));
+pmin = double(int16(xmin));
+pmin = uint16(pmin + 32768);    y.min = pmin;
+
+% Compute the input histogram between xmin and xmax with unit
+% width bins, scale to UINT16, and store.
+x = x(:)&#39;;
+h = histc(x, xmin:xmax);
+if max(h) &gt; 65535
+    h = 65535 * h / max(h);
+end
+h = uint16(h);   y.hist = h;
+
+% Code the input matrix and store the result.
+map = huffman(double(h));          % Make Huffman code map
+hx = map(x(:) - xmin + 1);         % Map image
+hx = char(hx)&#39;;                    % Convert to char array
+hx = hx(:)&#39;;
+hx(hx == &#39; &#39;) = [];                % Remove blanks
+ysize = ceil(length(hx) / 16);     % Compute encoded size
+hx16 = repmat(&#39;0&#39;, 1, ysize * 16); % Pre-allocate modulo-16 vector
+hx16(1:length(hx)) = hx;           % Make hx modulo-16 in length
+hx16 = reshape(hx16, 16, ysize);   % Reshape to 16-character words
+hx16 = hx16&#39; - &#39;0&#39;;                % Convert binary string to decimal
+twos = pow2(15:-1:0);
+y.code = uint16(sum(hx16 .* twos(ones(ysize, 1), :), 2))&#39;;</code></pre></div>
+
+<h3 id="toc_6">huff2mat.m</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">function x = huff2mat(y)
+%HUFF2MAT Decodes a Huffman encoded matrix.
+%   X = HUFF2MAT(Y) decodes a Huffman encoded structure Y with uint16
+%   fields: 
+%      Y.min    Minimum value of X plus 32768
+%      Y.size   Size of X
+%      Y.hist   Histogram of X
+%      Y.code   Huffman code
+%
+%   The output X is of class double.
+%
+%   See also MAT2HUFF.
+
+%   Copyright 2002-2004 R. C. Gonzalez, R. E. Woods, &amp; S. L. Eddins
+%   Digital Image Processing Using MATLAB, Prentice-Hall, 2004
+%   $Revision: 1.5 $  $Date: 2003/11/21 13:17:50 $
+
+if ~isstruct(y) | ~isfield(y, &#39;min&#39;) | ~isfield(y, &#39;size&#39;) | ...
+       ~isfield(y, &#39;hist&#39;) | ~isfield(y, &#39;code&#39;)
+   error(&#39;The input must be a structure as returned by MAT2HUFF.&#39;);
+end
+
+sz = double(y.size);   m = sz(1);   n = sz(2);
+xmin = double(y.min) - 32768;            % Get X minimum
+map = huffman(double(y.hist));           % Get Huffman code (cell)
+
+% Create a binary search table for the Huffman decoding process.
+% &#39;code&#39; contains source symbol strings corresponding to &#39;link&#39;
+% nodes, while &#39;link&#39; contains the addresses (+) to node pairs for
+% node symbol strings plus &#39;0&#39; and &#39;1&#39; or addresses (-) to decoded
+% Huffman codewords in &#39;map&#39;. Array &#39;left&#39; is a list of nodes yet to
+% be processed for &#39;link&#39; entries.
+
+code = cellstr(char(&#39;&#39;, &#39;0&#39;, &#39;1&#39;));     % Set starting conditions as
+link = [2; 0; 0];   left = [2 3];       % 3 nodes w/2 unprocessed
+found = 0;   tofind = length(map);      % Tracking variables
+
+while length(left) &amp; (found &lt; tofind)
+   look = find(strcmp(map, code{left(1)}));    % Is string in map?
+   if look                            % Yes
+      link(left(1)) = -look;          % Point to Huffman map
+      left = left(2:end);             % Delete current node
+      found = found + 1;              % Increment codes found
+      
+   else                               % No, add 2 nodes &amp; pointers
+      len = length(code);             % Put pointers in node
+      link(left(1)) = len + 1;
+      
+      link = [link; 0; 0];            % Add unprocessed nodes
+      code{end + 1} = strcat(code{left(1)}, &#39;0&#39;);
+      code{end + 1} = strcat(code{left(1)}, &#39;1&#39;);
+      
+      left = left(2:end);             % Remove processed node
+      left = [left len + 1 len + 2];  % Add 2 unprocessed nodes
+   end
+end
+
+x = unravel(y.code&#39;, link, m * n);    % Decode using C &#39;unravel&#39;
+x = x + xmin - 1;                     % X minimum offset adjust
+x = reshape(x, m, n);                 % Make vector an array</code></pre></div>
+
+<h3 id="toc_7">huffman.m</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">function CODE = huffman(p)
+%HUFFMAN Builds a variable-length Huffman code for a symbol source.
+%   CODE = HUFFMAN(P) returns a Huffman code as binary strings in
+%   cell array CODE for input symbol probability vector P. Each word
+%   in CODE corresponds to a symbol whose probability is at the
+%   corresponding index of P. 
+%
+%   Based on huffman5 by Sean Danaher, University of Northumbria,
+%   Newcastle UK. Available at the MATLAB Central File Exchange:
+%   Category General DSP in Signal Processing and Communications. 
+
+%   Copyright 2002-2004 R. C. Gonzalez, R. E. Woods, &amp; S. L. Eddins
+%   Digital Image Processing Using MATLAB, Prentice-Hall, 2004
+%   $Revision: 1.5 $  $Date: 2003/10/26 18:37:16 $
+
+% Check the input arguments for reasonableness.
+error(nargchk(1, 1, nargin));
+if (ndims(p) ~= 2) | (min(size(p)) &gt; 1) | ~isreal(p) | ~isnumeric(p)
+   error(&#39;P must be a real numeric vector.&#39;);     
+end
+   
+% Global variable surviving all recursions of function &#39;makecode&#39;
+global CODE
+CODE = cell(length(p), 1);  % Init the global cell array
+                            
+if length(p) &gt; 1            % When more than one symbol ...
+   p = p / sum(p);          % Normalize the input probabilities
+   s = reduce(p);           % Do Huffman source symbol reductions
+   makecode(s, []);         % Recursively generate the code
+else  
+   CODE = {&#39;1&#39;};            % Else, trivial one symbol case!
+end;   
+
+%-------------------------------------------------------------------%
+function s = reduce(p);
+% Create a Huffman source reduction tree in a MATLAB cell structure
+% by performing source symbol reductions until there are only two
+% reduced symbols remaining
+
+s = cell(length(p), 1);
+
+% Generate a starting tree with symbol nodes 1, 2, 3, ... to 
+% reference the symbol probabilities.
+for i = 1:length(p)
+   s{i} = i; 
+end
+
+while numel(s) &gt; 2
+   [p, i] = sort(p);    % Sort the symbol probabilities
+   p(2) = p(1) + p(2);  % Merge the 2 lowest probabilities
+   p(1) = [];           % and prune the lowest one
+   
+   s = s(i);            % Reorder tree for new probabilities
+   s{2} = {s{1}, s{2}}; % and merge &amp; prune its nodes
+   s(1) = [];           % to match the probabilities
+end
+
+%-------------------------------------------------------------------%
+function makecode(sc, codeword)
+% Scan the nodes of a Huffman source reduction tree recursively to
+% generate the indicated variable length code words.
+
+% Global variable surviving all recursive calls
+global CODE                           
+
+if isa(sc, &#39;cell&#39;)                   % For cell array nodes,
+   makecode(sc{1}, [codeword 0]);    % add a 0 if the 1st element
+   makecode(sc{2}, [codeword 1]);    % or a 1 if the 2nd
+else                                 % For leaf (numeric) nodes,
+   CODE{sc} = char(&#39;0&#39; + codeword);  % create a char code string
+end</code></pre></div>
+
+<h3 id="toc_8">unravel.c</h3>
+
+<div><pre class="line-numbers"><code class="language-c">/*===================================================================
+* unravel.c
+* Decodes a variable length coded bit sequence (a vector of
+* 16-bit integers) using a binary sort from the MSB to the LSB
+* (across word boundaries) based on a transition table.
+*==================================================================*/
+#include &quot;mex.h&quot;
+void unravel(uint16_T *hx, double *link, double *x,
+    double xsz, int hxsz)
+{
+   int i = 15, j = 0, k = 0, n = 0;     /* Start at root node, 1st */
+                                        /* hx bit and x element */
+   while (xsz - k)   {                  /* Do until x is filled */
+   if (*(link + n) &gt; 0)   {             /* Is there a link? */
+      if ((*(hx + j) &gt;&gt; i) &amp; 0x0001)    /* Is bit a 1? */
+         n = *(link + n);               /* Yes, get new node */
+      else n = *(link + n) - 1;         /* It&#39;s 0 so get new node */
+      if (i) i--; else {j++; i = 15;}   /* Set i, j to next bit */
+      if (j &gt; hxsz)                     /* Bits left to decode? */
+         mexErrMsgTxt(&quot;Out of code bits ???&quot;);
+   }
+   else    {                            /* It must be a leaf node */
+      *(x + k++) = - *(link + n);       /* Output value */
+       n = 0;    }                      /* Start over at root */
+   }
+   if (k == xsz - 1)                    /* Is one left over? */
+      *(x + k++) = - *(link + n);
+}
+void mexFunction( int nlhs, mxArray *plhs[],
+                  int nrhs, const mxArray *prhs[])
+{
+   double *link, *x, xsz;
+   uint16_T *hx;
+   int hxsz;
+   
+   /* Check inputs for reasonableness */
+   if (nrhs != 3)
+      mexErrMsgTxt(&quot;Three inputs required.&quot;);
+   else if (nlhs &gt; 1)
+      mexErrMsgTxt(&quot;Too many output arguments.&quot;);
+   
+   /* Is last input argument a scalar? */
+   if(!mxIsDouble(prhs[2])  || mxIsComplex(prhs[2])  ||
+         mxGetN(prhs[2]) * mxGetM(prhs[2]) != 1)
+      mexErrMsgTxt(&quot;Input XSIZE must be a scalar.&quot;);
+   
+   /* Create input matrix pointers and get scalar */
+   hx = (uint16_T *) mxGetData(prhs[0]);
+   link = (double *) mxGetData(prhs[1]);
+   xsz = mxGetScalar(prhs[2]);          /* returns DOUBLE */
+   
+   /* Get the number of elements in hx */
+   hxsz = mxGetM(prhs[0]);
+   
+   /* Create &#39;xsz&#39; x 1 output matrix */
+   plhs[0] = mxCreateDoubleMatrix(xsz, 1, mxREAL);
+   
+   /* Get C pointer to a copy of the output matrix */
+   x = (double *) mxGetData(plhs[0]);
+   
+   /* Call the C subroutine */
+   unravel(hx, link, x, xsz, hxsz);
+}
+
+</code></pre></div>
+
+<h3 id="toc_9">prob7.m</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">img = imread(&#39;lenna.tif&#39;);
+[M,N] = size(img);
+all_in = zeros(4*M,3*N);
+for k=0.1:0.3:1
+    img_comp = im2jpeg(img,k);
+    img_rec = jpeg2im(img_comp);
+    img_diff = imsubtract(img,img_rec);
+    all_in(round((k-0.1)/0.3)*M+1:round((k-0.1)/0.3)*M+M,1:N*3)=[img,img_rec,img_diff];
+end
+imshow(mat2gray(all_in));</code></pre></div>
+
+<h3 id="toc_10">Result</h3>
+
+<p><img src="http://xiublog.qiniudn.com/image/2016-12-21-160326.jpg" alt=""></p>
+
+<h2 id="toc_11">Problem 7 Requirement 2</h2>
+
+<p><img src="http://xiublog.qiniudn.com/image/2016-12-21-111202.jpg" alt=""><br>
+<img src="http://xiublog.qiniudn.com/image/2016-12-21-111212.jpg" alt=""><br>
+<img src="http://xiublog.qiniudn.com/image/2016-12-21-174121.jpg" alt=""></p>
+
+<h2 id="toc_12">Problem  solution 2</h2>
+
+<h3 id="toc_13">Haar(step=3,6,9)</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">meth   = &#39;ezw&#39;;   % Method name
+wname  = &#39;haar&#39;;  % Wavelet name
+
+img = imread(&#39;lenna.tif&#39;);
+[M,N] = size(img);
+all_in = zeros(3*M,3*N);
+
+for k=1:3
+    [CR,BPP] = wcompress(&#39;c&#39;,X,&#39;mask.wtc&#39;,meth,&#39;maxloop&#39;, k*3,&#39;wname&#39;,wname);
+    img_rec = wcompress(&#39;u&#39;,&#39;mask.wtc&#39;);
+    img_diff=imsubtract(img,uint8(img_rec));
+    all_in((k-1)*M+1:(k-1)*M+M,1:N*3)=[img,img_rec,img_diff];
+end
+
+imshow(mat2gray(all_in));</code></pre></div>
+
+<p><img src="http://xiublog.qiniudn.com/image/2016-12-21-180041.jpg" alt=""></p>
+
+<h3 id="toc_14">Daubechies(step=3,6,9)</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">meth   = &#39;ezw&#39;;   % Method name
+wname  = &#39;db8&#39;;  % Wavelet name
+
+img = imread(&#39;lenna.tif&#39;);
+[M,N] = size(img);
+all_in = zeros(3*M,3*N);
+
+for k=1:3
+    [CR,BPP] = wcompress(&#39;c&#39;,X,&#39;mask.wtc&#39;,meth,&#39;maxloop&#39;, k*3,&#39;wname&#39;,wname);
+    img_rec = wcompress(&#39;u&#39;,&#39;mask.wtc&#39;);
+    img_diff=imsubtract(img,uint8(img_rec));
+    all_in((k-1)*M+1:(k-1)*M+M,1:N*3)=[img,img_rec,img_diff];
+end
+
+imshow(mat2gray(all_in));</code></pre></div>
+
+<p><img src="http://xiublog.qiniudn.com/image/2016-12-21-180346.jpg" alt=""></p>
+
+<h3 id="toc_15">Symlet(step=3,6,9)</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">meth   = &#39;ezw&#39;;   % Method name
+wname  = &#39;sym8&#39;;  % Wavelet name
+
+img = imread(&#39;lenna.tif&#39;);
+[M,N] = size(img);
+all_in = zeros(3*M,3*N);
+
+for k=1:3
+    [CR,BPP] = wcompress(&#39;c&#39;,X,&#39;mask.wtc&#39;,meth,&#39;maxloop&#39;, k*3,&#39;wname&#39;,wname);
+    img_rec = wcompress(&#39;u&#39;,&#39;mask.wtc&#39;);
+    img_diff=imsubtract(img,uint8(img_rec));
+    all_in((k-1)*M+1:(k-1)*M+M,1:N*3)=[img,img_rec,img_diff];
+end
+
+imshow(mat2gray(all_in));</code></pre></div>
+
+<p><img src="http://xiublog.qiniudn.com/image/2016-12-21-180454.jpg" alt=""></p>
+
+<h3 id="toc_16">biorthogonal Cohen-Daubechies-Feauveau(step=3,6,9)</h3>
+
+<h3 id="toc_17">waveletcdf97.m</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">function X = waveletcdf97(X, Level)
+%WAVELETCDF97  Cohen-Daubechies-Feauveau 9/7 wavelet transform.
+%   Y = WAVELETCDF97(X, L) decomposes X with L stages of the
+%   Cohen-Daubechies-Feauveau (CDF) 9/7 wavelet.  For the
+%   inverse transform, WAVELETCDF97(X, -L) inverts L stages.
+%   Filter boundary handling is half-sample symmetric.
+%
+%   X may be of any size; it need not have size divisible by 2^L.
+%   For example, if X has length 9, one stage of decomposition
+%   produces a lowpass subband of length 5 and a highpass subband
+%   of length 4.  Transforms of any length have perfect
+%   reconstruction (exact inversion).
+%
+%   If X is a matrix, WAVELETCDF97 performs a (tensor) 2D wavelet
+%   transform.  If X has three dimensions, the 2D transform is
+%   applied along the first two dimensions.
+%
+%   Example:
+%   Y = waveletcdf97(X, 5);    % Transform image X using 5 stages
+%   R = waveletcdf97(Y, -5);   % Reconstruct from Y
+
+% Pascal Getreuer 2004-2006
+
+if nargin &lt; 2, error(&#39;Not enough input arguments.&#39;); end
+if ndims(X) &gt; 3, error(&#39;Input must be a 2D or 3D array.&#39;); end
+if any(size(Level) ~= 1), error(&#39;Invalid transform level.&#39;); end
+
+N1 = size(X,1);
+N2 = size(X,2);
+
+% Lifting scheme filter coefficients for CDF 9/7
+LiftFilter = [-1.5861343420693648,-0.0529801185718856,0.8829110755411875,0.4435068520511142];
+ScaleFactor = 1.1496043988602418;
+
+S1 = LiftFilter(1);
+S2 = LiftFilter(2);
+S3 = LiftFilter(3);
+ExtrapolateOdd = -2*[S1*S2*S3,S2*S3,S1+S3+3*S1*S2*S3]/(1+2*S2*S3);
+
+LiftFilter = LiftFilter([1,1],:);
+
+if Level &gt;= 0   % Forward transform
+   for k = 1:Level
+      M1 = ceil(N1/2);
+      M2 = ceil(N2/2);
+      
+      %%% Transform along columns %%%
+      if N1 &gt; 1         
+         RightShift = [2:M1,M1];
+         X0 = X(1:2:N1,1:N2,:);
+
+         % Apply lifting stages
+         if rem(N1,2)
+            X1 = [X(2:2:N1,1:N2,:);X0(M1-1,:,:)*ExtrapolateOdd(1)...
+                  + X(N1-1,1:N2,:)*ExtrapolateOdd(2)...
+                  + X0(M1,:,:)*ExtrapolateOdd(3)]...
+               + filter(LiftFilter(:,1),1,X0(RightShift,:,:),...
+               X0(1,:,:)*LiftFilter(1,1),1);
+         else
+            X1 = X(2:2:N1,1:N2,:) ...
+               + filter(LiftFilter(:,1),1,X0(RightShift,:,:),...
+               X0(1,:,:)*LiftFilter(1,1),1);
+         end
+
+         X0 = X0 + filter(LiftFilter(:,2),1,...
+            X1,X1(1,:,:)*LiftFilter(1,2),1);
+         X1 = X1 + filter(LiftFilter(:,3),1,...
+            X0(RightShift,:,:),X0(1,:,:)*LiftFilter(1,3),1);
+         X0 = X0 + filter(LiftFilter(:,4),1,...
+            X1,X1(1,:,:)*LiftFilter(1,4),1);
+
+         if rem(N1,2)
+            X1(M1,:,:) = [];
+         end
+
+         X(1:N1,1:N2,:) = [X0*ScaleFactor;X1/ScaleFactor];
+      end
+
+      %%% Transform along rows %%%
+      if N2 &gt; 1
+         RightShift = [2:M2,M2];
+         X0 = permute(X(1:N1,1:2:N2,:),[2,1,3]);
+
+         % Apply lifting stages
+         if rem(N2,2)
+            X1 = permute([X(1:N1,2:2:N2,:),X(1:N1,N2-2,:)*ExtrapolateOdd(1)...
+                  + X(1:N1,N2-1,:)*ExtrapolateOdd(2) ...
+                  + X(1:N1,N2,:)*ExtrapolateOdd(3)],[2,1,3])...
+               + filter(LiftFilter(:,1),1,X0(RightShift,:,:),...
+               X0(1,:,:)*LiftFilter(1,1),1);
+         else
+            X1 = permute(X(1:N1,2:2:N2,:),[2,1,3]) ...
+               + filter(LiftFilter(:,1),1,X0(RightShift,:,:),...
+               X0(1,:,:)*LiftFilter(1,1),1);
+         end
+
+         X0 = X0 + filter(LiftFilter(:,2),1,...
+            X1,X1(1,:,:)*LiftFilter(1,2),1);
+         X1 = X1 + filter(LiftFilter(:,3),1,...
+            X0(RightShift,:,:),X0(1,:,:)*LiftFilter(1,3),1);
+         X0 = X0 + filter(LiftFilter(:,4),1,...
+            X1,X1(1,:,:)*LiftFilter(1,4),1);
+
+         if rem(N2,2)
+            X1(M2,:,:) = [];
+         end
+
+         X(1:N1,1:N2,:) = permute([X0*ScaleFactor;X1/ScaleFactor],[2,1,3]);
+      end
+
+      N1 = M1;
+      N2 = M2;
+   end
+else           % Inverse transform
+   for k = 1+Level:0
+      M1 = ceil(N1*pow2(k));
+      M2 = ceil(N2*pow2(k));
+
+      %%% Inverse transform along rows %%%
+      if M2 &gt; 1
+         Q = ceil(M2/2);
+         RightShift = [2:Q,Q];
+         X1 = permute(X(1:M1,Q+1:M2,:)*ScaleFactor,[2,1,3]);
+
+         if rem(M2,2)
+            X1(Q,1,1) = 0;
+         end
+
+         % Undo lifting stages
+         X0 = permute(X(1:M1,1:Q,:)/ScaleFactor,[2,1,3]) ...
+            - filter(LiftFilter(:,4),1,X1,X1(1,:,:)*LiftFilter(1,4),1);
+         X1 = X1 - filter(LiftFilter(:,3),1,X0(RightShift,:,:),...
+            X0(1,:,:)*LiftFilter(1,3),1);
+         X0 = X0 - filter(LiftFilter(:,2),1,X1,...
+            X1(1,:,:)*LiftFilter(1,2),1);
+         X1 = X1 - filter(LiftFilter(:,1),1,X0(RightShift,:,:),...
+            X0(1,:,:)*LiftFilter(1,1),1);
+
+         if rem(M2,2)
+            X1(Q,:,:) = [];
+         end
+
+         X(1:M1,[1:2:M2,2:2:M2],:) = permute([X0;X1],[2,1,3]);
+      end
+
+      %%% Inverse transform along columns %%%
+      if M1 &gt; 1
+         Q = ceil(M1/2);
+         RightShift = [2:Q,Q];
+         X1 = X(Q+1:M1,1:M2,:)*ScaleFactor;
+
+         if rem(M1,2)
+            X1(Q,1,1) = 0;
+         end
+
+         % Undo lifting stages
+         X0 = X(1:Q,1:M2,:)/ScaleFactor ...
+            - filter(LiftFilter(:,4),1,X1,X1(1,:,:)*LiftFilter(1,4),1);
+         X1 = X1 - filter(LiftFilter(:,3),1,X0(RightShift,:,:),...
+            X0(1,:,:)*LiftFilter(1,3),1);
+         X0 = X0 - filter(LiftFilter(:,2),1,X1,...
+            X1(1,:,:)*LiftFilter(1,2),1);
+         X1 = X1 - filter(LiftFilter(:,1),1,X0(RightShift,:,:),...
+            X0(1,:,:)*LiftFilter(1,1),1);
+
+         if rem(M1,2)
+            X1(Q,:,:) = [];
+         end
+
+         X([1:2:M1,2:2:M1],1:M2,:) = [X0;X1];
+      end
+   end
+end
+</code></pre></div>
+
+<h3 id="toc_18">main.m</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">img = imread(&#39;lenna.tif&#39;);
+[M,N] = size(img);
+all_in = zeros(3*M,3*N);
+
+for k=1:3
+    tran_img = waveletcdf97(double(img),k*3);
+    tran_img(tran_img&lt;1/40);
+    img_rec = waveletcdf97(tran_img(tran_img&gt;1/40),-k*3);
+    img_diff=imsubtract(img,uint8(img_rec));
+    all_in((k-1)*M+1:(k-1)*M+M,1:N*3)=[img,img_rec,img_diff];
+end
+
+imshow(mat2gray(all_in));
+</code></pre></div>
+
+<p><img src="http://xiublog.qiniudn.com/image/2016-12-22-081355.jpg" alt=""></p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.matlab={string:/\B'(?:''|[^'\n])*'/,comment:[/%\{[\s\S]*?\}%/,/%.+/],number:/\b-?(?:\d*\.?\d+(?:[eE][+-]?\d+)?(?:[ij])?|[ij])\b/,keyword:/\b(?:break|case|catch|continue|else|elseif|end|for|function|if|inf|NaN|otherwise|parfor|pause|pi|return|switch|try|while)\b/,"function":/(?!\d)\w+(?=\s*\()/,operator:/\.?[*^\/\\']|[+\-:@]|[<>=~]=?|&&?|\|\|?/,punctuation:/\.{3}|[.,;\[\](){}!]/};
+</script>
+
+<script type="text/javascript">
+Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\w\W]*?\*\//,lookbehind:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0}],string:{pattern:/(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,greedy:!0},"class-name":{pattern:/((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,"boolean":/\b(true|false)\b/,"function":/[a-z0-9_]+(?=\()/i,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,operator:/--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,punctuation:/[{}[\];(),.:]/};
+</script>
+
+<script type="text/javascript">
+Prism.languages.c=Prism.languages.extend("clike",{keyword:/\b(asm|typeof|inline|auto|break|case|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|int|long|register|return|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while)\b/,operator:/\-[>-]?|\+\+?|!=?|<<?=?|>>?=?|==?|&&?|\|?\||[~^%?*\/]/,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)[ful]*\b/i}),Prism.languages.insertBefore("c","string",{macro:{pattern:/(^\s*)#\s*[a-z]+([^\r\n\\]|\\.|\\(?:\r\n?|\n))*/im,lookbehind:!0,alias:"property",inside:{string:{pattern:/(#\s*include\s*)(<.+?>|("|')(\\?.)+?\3)/,lookbehind:!0},directive:{pattern:/(#\s*)\b(define|elif|else|endif|error|ifdef|ifndef|if|import|include|line|pragma|undef|using)\b/,lookbehind:!0,alias:"keyword"}}},constant:/\b(__FILE__|__LINE__|__DATE__|__TIME__|__TIMESTAMP__|__func__|EOF|NULL|stdin|stdout|stderr)\b/}),delete Prism.languages.c["class-name"],delete Prism.languages.c["boolean"];
+</script>
+
+<script type="text/javascript">
+!function(){"undefined"!=typeof self&&self.Prism&&self.document&&Prism.hooks.add("complete",function(e){if(e.code){var t=e.element.parentNode,s=/\s*\bline-numbers\b\s*/;if(t&&/pre/i.test(t.nodeName)&&(s.test(t.className)||s.test(e.element.className))&&!e.element.querySelector(".line-numbers-rows")){s.test(e.element.className)&&(e.element.className=e.element.className.replace(s,"")),s.test(t.className)||(t.className+=" line-numbers");var n,a=e.code.match(/\n(?!$)/g),l=a?a.length+1:1,m=new Array(l+1);m=m.join("<span></span>"),n=document.createElement("span"),n.className="line-numbers-rows",n.innerHTML=m,t.hasAttribute("data-start")&&(t.style.counterReset="linenumber "+(parseInt(t.getAttribute("data-start"),10)-1)),e.element.appendChild(n)}}})}();
+</script>
+
+<script type="text/javascript">
+!function(){if("undefined"!=typeof self&&self.Prism&&self.document){var e={html:"HTML",xml:"XML",svg:"SVG",mathml:"MathML",css:"CSS",clike:"C-like",javascript:"JavaScript",abap:"ABAP",actionscript:"ActionScript",apacheconf:"Apache Configuration",apl:"APL",applescript:"AppleScript",asciidoc:"AsciiDoc",aspnet:"ASP.NET (C#)",autoit:"AutoIt",autohotkey:"AutoHotkey",basic:"BASIC",csharp:"C#",cpp:"C++",coffeescript:"CoffeeScript","css-extras":"CSS Extras",fsharp:"F#",glsl:"GLSL",http:"HTTP",inform7:"Inform 7",json:"JSON",latex:"LaTeX",lolcode:"LOLCODE",matlab:"MATLAB",mel:"MEL",nasm:"NASM",nginx:"nginx",nsis:"NSIS",objectivec:"Objective-C",ocaml:"OCaml",parigp:"PARI/GP",php:"PHP","php-extras":"PHP Extras",powershell:"PowerShell",jsx:"React JSX",rest:"reST (reStructuredText)",sas:"SAS",sass:"Sass (Sass)",scss:"Sass (Scss)",sql:"SQL",typescript:"TypeScript",vhdl:"VHDL",vim:"vim",wiki:"Wiki markup",yaml:"YAML"};Prism.hooks.add("before-highlight",function(s){var a=s.element.parentNode;if(a&&/pre/i.test(a.nodeName)){var t,i,r=a.getAttribute("data-language")||e[s.language]||s.language.substring(0,1).toUpperCase()+s.language.substring(1),l=a.previousSibling;l&&/\s*\bprism-show-language\b\s*/.test(l.className)&&l.firstChild&&/\s*\bprism-show-language-label\b\s*/.test(l.firstChild.className)?i=l.firstChild:(t=document.createElement("div"),i=document.createElement("div"),i.className="prism-show-language-label",t.className="prism-show-language",t.appendChild(i),a.parentNode.insertBefore(t,a)),i.innerHTML=r}})}}();
+</script>
+
+<script type="text/x-mathjax-config">
+(function () {
+
+MathJax.Hub.Config({
+	'showProcessingMessages': false,
+	'messageStyle': 'none'
+});
+
+if (typeof MathJaxListener !== 'undefined') {
+	MathJax.Hub.Register.StartupHook('End', function () {
+		MathJaxListener.invokeCallbackForKey_('End');
+	});
+}
+
+})();
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>

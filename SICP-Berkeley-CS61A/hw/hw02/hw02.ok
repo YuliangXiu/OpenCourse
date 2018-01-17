@@ -1,0 +1,26 @@
+{
+    "name": "Homework 2",
+    "endpoint": "cal/cs61a/fa15/hw02",
+    "src": [
+        "hw02.py"
+    ],
+    "tests": {
+        "hw02.py:product": "doctest",
+        "hw02.py:factorial": "doctest",
+        "hw02.py:accumulate": "doctest",
+        "hw02.py:summation_using_accumulate": "doctest",
+        "hw02.py:product_using_accumulate": "doctest",
+        "hw02.py:piecewise": "doctest",
+        "hw02.py:repeated": "doctest",
+        "hw02.py:church_to_int": "doctest",
+        "hw02.py:add_church": "doctest",
+        "hw02.py:mul_church": "doctest",
+        "hw02.py:pow_church": "doctest"
+    },
+    "protocols": [
+        "file_contents",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}

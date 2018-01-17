@@ -1,0 +1,27 @@
+{
+    "name": "Lab 5",
+    "endpoint": "cal/cs61a/fa15/lab05",
+    "src": [
+        "lab05.py",
+        "lab05_extra.py"
+    ],
+    "tests": {
+        "tests/height_depth.py": "ok_test",
+        "tests/structure.py": "ok_test",
+        "tests/height.py": "ok_test",
+        "lab05.py:make_pytunes": "doctest",
+        "lab05.py:num_songs": "doctest",
+        "lab05.py:find": "doctest",
+        "lab05.py:add_song": "doctest",
+        "lab05.py:delete": "doctest",
+        "lab05_extra.py:info": "doctest"
+    },
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "unlock",
+        "grading",
+        "backup"
+    ]
+}

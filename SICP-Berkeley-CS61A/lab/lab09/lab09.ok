@@ -1,0 +1,37 @@
+{
+    "name": "Lab 09",
+    "endpoint": "cal/cs61a/fa15/lab09",
+    "src": [
+        "lab09.scm"
+    ],
+    "tests": {
+        "tests/wwsp.py": "ok_test",
+        "tests/cube.py": "ok_test",
+        "tests/over-or-under.py": "ok_test",
+        "tests/gcd.py": "ok_test",
+        "tests/make-list.py": "ok_test",
+        "tests/remove.py": "ok_test",
+        "tests/filter.py": "ok_test",
+        "tests/make-adder.py": "ok_test",
+        "tests/composed.py": "ok_test",
+        "tests/num-leaves.py": "ok_test",
+        "tests/accumulate.py": "ok_test"
+    },
+    "default_tests": [
+        "cube",
+        "over-or-under",
+        "make-list", 
+        "remove",
+        "filter",
+        "make-adder",
+        "composed"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "unlock",
+        "grading",
+        "backup"
+    ]
+}

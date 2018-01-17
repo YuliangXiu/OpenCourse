@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>solution4</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js Dark theme for JavaScript, CSS and HTML
+ * Based on the slides of the talk “/Reg(exp){2}lained/”
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: white;
+	background: none;
+	text-shadow: 0 -.1em .2em black;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+pre[class*="language-"],
+:not(pre) > code[class*="language-"] {
+	background: hsl(30, 20%, 25%);
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border: .3em solid hsl(30, 20%, 40%);
+	border-radius: .5em;
+	box-shadow: 1px 1px .5em black inset;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .15em .2em .05em;
+	border-radius: .3em;
+	border: .13em solid hsl(30, 20%, 40%);
+	box-shadow: 1px 1px .3em -.1em black inset;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: hsl(30, 20%, 50%);
+}
+
+.token.punctuation {
+	opacity: .7;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+	color: hsl(350, 40%, 70%);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: hsl(75, 70%, 60%);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: hsl(40, 90%, 60%);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: hsl(350, 40%, 70%);
+}
+
+.token.regex,
+.token.important {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.token.deleted {
+	color: red;
+}
+</style>
+
+<style type="text/css">
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		pointer-events: none;
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
+</style>
+
+<style type="text/css">
+div.prism-show-language {
+	position: relative;
+}
+
+div.prism-show-language > div.prism-show-language-label {
+	color: black;
+	background-color: #CFCFCF;
+	display: inline-block;
+	position: absolute;
+	bottom: auto;
+	left: auto;
+	top: 0;
+	right: 0;
+	width: auto;
+	height: auto;
+	font-size: 0.9em;
+	border-radius: 0 0 0 5px;
+	padding: 0 0.5em;
+	text-shadow: none;
+	z-index: 1;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-transform: none;
+	-moz-transform: none;
+	-ms-transform: none;
+	-o-transform: none;
+	transform: none;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0"><center>Digital Image Processing</center></h1>
+
+<p><h6 align='center'>BB1603391 116033910045 修宇亮</p>
+
+<h2 id="toc_1">Problem 4 Requirement</h2>
+
+<p><img src="http://ww2.sinaimg.cn/large/006y8mN6jw1f9vak2zos8j314g0e4n2e.jpg" alt=""></p>
+
+<h2 id="toc_2">Problem 4 solution</h2>
+
+<h3 id="toc_3">imnoise2.m</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">function R = imnoise2(type,M,N,a,b)
+% Imnoise2 to creates a random array with the specified PDF
+% R = IMNOISE2(TYPE,M,N,A,B) generates an array, R, of size M by N whose
+% elements are random numbers of the specified TYPE with parameters A and
+% B. IF ony TYPE is included in the input argument list, a single random 
+% number of the specified TYPE and and default parameters show below is
+% generated. If only TYPE, M and N are provided, the default parameters
+% shown below are used. If M=N=1, IMNOISE2 generates a single random number
+% of the specified TYPE and parameters A and B.
+%
+% Valid values for TYPE and parameters A and B are:
+% &#39;uniform&#39;        Uniform random numbers in the interval (A,B). 
+%                  The default values are (0,1).
+%
+% &#39;guassian&#39;       Gaussian random numbers with mean A and standard
+%                  deviation B.The default values are A = 0, B = 1.
+%
+% &#39;salt &amp; pepper&#39;  Salt and pepper numbers  of amplitude 1 with probability 
+%                  Pa  = A, and amplitude 0 with probability Pb = B. The 
+%                  default values are Pa = Pb = A = B = 0.05. Note that the
+%                  noise has values 0(with probability Pa = A) and 1(with
+%                  probability Pb = B), so scaling is necessary if values
+%                  other than 0 and 1 are required. The noise matrix R is
+%                  assigned three values. If R(x,y) = 0, the noise at (x,y)
+%                  is pepper(black). If R(x,y ) = 1, the noise at (x,y) is
+%                  salt(white). If R(x,y) = 0.5, there is no noise assigned
+%                  to coordinates (x,y).
+%
+% &#39;lognormal&#39;      Lognormal numbers with offset A and shape parameter B.
+%                  The defaults are A = 1 and B = 0.25.
+%
+% &#39;rayleigh&#39;       Rayleigh noise with parameters A and B. The default 
+%                  values are A = 0 and B = 1.
+%
+% &#39;exponential&#39;    Exponential random numbers with parameter A. The default
+%                  value is A = 1.
+% 
+% &#39;erlang&#39;         Erlang(gamma) random numbers with parameters A and B. B
+%                  must be a positive integer. The defaults are A = 2 and B
+%                  = 5. Erlang random numbers are approximated as the sum
+%                  of B exponential random numbers.
+%
+% set default values.
+if nargin == 1
+    a = 0; b = 1;
+    M = 1; N = 1;
+elseif nargin == 3
+    a = 0; b = 1;
+end
+%as we need only small letters as the type so...
+switch lower(type)
+    case &#39;uniform&#39;
+        R = a + (b-a)*rand(M,N);
+    case &#39;gaussian&#39;
+        R = a + b*randn(M,N);
+    case &#39;salt &amp; pepper&#39;
+        if nargin &lt;= 3
+        a = 0.05; b = 0.05;
+        end
+% check to make sure that Pa + Pb is not &gt; 1.        
+        if (a + b) &gt; 1
+            error(&#39;The sum of the Pa and Pb cannot exeed 1.&#39;)
+        end
+        R(1:M,1:N) = 0.5;
+% Generate an M by N array of uniformly distributed random numbers in the 
+% range (0,1). Then, Pa*(M*N) of them will have values &lt;= a. The 
+% coordinates of these points we call 0 (pepper noise). Similarly, Pb*(M*N)
+% points will have values in the range &gt; a &amp; &lt;= (a+b). These we call 
+% (salt noise).
+        X = rand(M,N);
+        c = find(X&lt;=a);
+        R(c) = 0;
+        u = a + b;
+        c = find(X &gt; a &amp; X &lt;= u);
+        R(c) = 1;
+    case &#39;lognormal&#39;
+        if nargin&lt;=3
+            a = 1; b = 0.25;
+        end
+        R = a*exp(b*randn(M,N));
+    case &#39;rayleigh&#39;
+        R = a + (-b*log(1-rand(M,N))).^0.5;
+    case &#39;exponential&#39;
+        if nargin &lt;= 3
+            a = 1;
+        end
+        if a &lt;= 0
+            error(&#39;the value of a must b positive for exponential operation&#39;)
+        end
+        k = -1/a
+        R = k*log(1 - rand(M,N));
+    case &#39;erlang&#39;
+        if nargin &lt;= 3
+            a = 2; b = 5;
+        end
+        if (b ~= round(b)| b &lt;= 0)
+            error(&#39;Parameter b should b a negative value for erlang&#39;)
+        end
+        k = -1/a;
+        R = zeros(M,N);
+        for j = 1:b
+            R = R + k*log(1 - rand(M,N));
+        end
+    otherwise 
+        error(&#39;Unknown distribution type.&#39;)
+end
+        </code></pre></div>
+
+<h3 id="toc_4">spfilt.m</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">function f = spfilt(g, type, varargin)
+%SPFILT Performs linear and nonlinear spatial filtering.
+%   F = SPFILT(G, TYPE, M, N, PARAMETER) performs spatial filtering
+%   of image G using a TYPE filter of size M-by-N. Valid calls to
+%   SPFILT are as follows: 
+%
+%     F = SPFILT(G, &#39;amean&#39;, M, N)       Arithmetic mean filtering.
+%     F = SPFILT(G, &#39;gmean&#39;, M, N)       Geometric mean filtering.
+%     F = SPFILT(G, &#39;hmean&#39;, M, N)       Harmonic mean filtering.
+%     F = SPFILT(G, &#39;chmean&#39;, M, N, Q)   Contraharmonic mean
+%                                        filtering of order Q. The
+%                                        default is Q = 1.5.
+%     F = SPFILT(G, &#39;median&#39;, M, N)      Median filtering.
+%     F = SPFILT(G, &#39;max&#39;, M, N)         Max filtering.
+%     F = SPFILT(G, &#39;min&#39;, M, N)         Min filtering.
+%     F = SPFILT(G, &#39;midpoint&#39;, M, N)    Midpoint filtering.
+%     F = SPFILT(G, &#39;atrimmed&#39;, M, N, D) Alpha-trimmed mean filtering.
+%                                        Parameter D must be a
+%                                        nonnegative even integer;
+%                                        its default value is D = 2.
+%
+%   The default values when only G and TYPE are input are M = N = 3,
+%   Q = 1.5, and D = 2. 
+
+[m, n, Q, d] = processInputs(varargin{:});
+
+% Do the filtering.
+switch type
+case &#39;amean&#39;
+   w = fspecial(&#39;average&#39;, [m n]);
+   f = imfilter(g, w, &#39;replicate&#39;);
+case &#39;gmean&#39;
+   f = gmean(g, m, n);
+case &#39;hmean&#39;
+   f = harmean(g, m, n);
+case &#39;chmean&#39;
+   f = charmean(g, m, n, Q);
+case &#39;median&#39;
+   f = medfilt2(g, [m n], &#39;symmetric&#39;);
+case &#39;max&#39;
+   f = imdilate(g, ones(m, n));
+case &#39;min&#39;
+   f = imerode(g, ones(m, n));
+case &#39;midpoint&#39;
+   f1 = ordfilt2(g, 1, ones(m, n), &#39;symmetric&#39;);
+   f2 = ordfilt2(g, m*n, ones(m, n), &#39;symmetric&#39;);
+   f = imlincomb(0.5, f1, 0.5, f2);
+case &#39;atrimmed&#39;
+   f = alphatrim(g, m, n, d);
+otherwise
+   error(&#39;Unknown filter type.&#39;)
+end
+
+%-------------------------------------------------------------------%
+function f = gmean(g, m, n)
+%  Implements a geometric mean filter.
+[g, revertclass] = tofloat(g);
+f = exp(imfilter(log(g), ones(m, n), &#39;replicate&#39;)).^(1 / m / n);
+f = revertclass(f);
+
+%-------------------------------------------------------------------%
+function f = harmean(g, m, n)
+%  Implements a harmonic mean filter.
+[g, revertclass] = tofloat(g);
+f = m * n ./ imfilter(1./(g + eps),ones(m, n), &#39;replicate&#39;);
+f = revertclass(f);
+
+%-------------------------------------------------------------------%
+function f = charmean(g, m, n, q)
+%  Implements a contraharmonic mean filter.
+[g, revertclass] = tofloat(g);
+f = imfilter(g.^(q+1), ones(m, n), &#39;replicate&#39;);
+f = f ./ (imfilter(g.^q, ones(m, n), &#39;replicate&#39;) + eps);
+f = revertclass(f);
+
+%-------------------------------------------------------------------%
+function f = alphatrim(g, m, n, d)
+%  Implements an alpha-trimmed mean filter.
+if (d &lt;= 0) | (d/2 ~= round(d/2))
+    error(&#39;d must be a positive, even integer.&#39;)
+end
+[g, revertclass] = tofloat(g);
+f = imfilter(g, ones(m, n), &#39;symmetric&#39;);
+for k = 1:d/2
+   f = f - ordfilt2(g, k, ones(m, n), &#39;symmetric&#39;);
+end
+for k = (m*n - (d/2) + 1):m*n
+   f = f - ordfilt2(g, k, ones(m, n), &#39;symmetric&#39;);
+end
+f = f / (m*n - d);
+f = revertclass(f);
+
+%-------------------------------------------------------------------%
+function [m, n, Q, d] = processInputs(varargin)
+m = 3;
+n = 3;
+Q = 1.5;
+d = 2;
+if nargin &gt; 0
+    m = varargin{1};
+end
+if nargin &gt; 1
+    n = varargin{2};
+end
+if nargin &gt; 2
+    Q = varargin{3};
+    d = varargin{3};
+end</code></pre></div>
+
+<h3 id="toc_5">prob.m</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">
+orig_img = imread(&#39;Circuit.tif&#39;);
+noise_type = {&#39;uniform&#39;,&#39;gaussian&#39;,&#39;salt &amp; pepper&#39;,&#39;lognormal&#39;,&#39;rayleigh&#39;,&#39;exponential&#39;,&#39;erlang&#39;};
+filter_type = {&#39;amean&#39;,&#39;gmean&#39;,&#39;hmean&#39;,&#39;chmean&#39;,&#39;median&#39;,&#39;max&#39;,&#39;min&#39;,&#39;midpoint&#39;,&#39;atrimmed&#39;};
+[M,N] = size(orig_img);
+bins  = 51;
+
+for i=3:3
+    set(gcf, &#39;position&#39;, [0 0 1200 300]);
+    subplot(1,3,1),imshow(orig_img);title(&#39;original image&#39;);
+    switch i
+        case 1
+            noise = imnoise2(noise_type{i},M,N,0,0.1);
+        case 2
+            noise = imnoise2(noise_type{i},M,N,0,0.1);
+        case 3
+            % salt
+            noise = imnoise2(noise_type{i},M,N,0,0.1);
+            noise_img1 = orig_img;
+            noise_img1(noise == 1) = 255;
+            % pepper
+            noise = imnoise2(noise_type{i},M,N,0.1,0);
+            noise_img2 = orig_img;
+            noise_img2(noise == 0) = 0;
+        otherwise
+            noise = imnoise2(noise_type{i},M,N);
+        
+    end
+    
+    subplot(1,3,2),hist(noise(:),bins);title([noise_type{i},&#39; noise&#39;]);
+    if i ~= 3
+        noise_img = im2uint8(im2double(orig_img)+noise);
+        subplot(1,3,3),imshow(noise_img);title([noise_type{i},&#39; image&#39;]);
+    else
+        subplot(1,3,3),imshow(noise_img1);title([noise_type{i},&#39; image&#39;]);
+%         subplot(1,3,3),imshow(noise_img2);title([noise_type{i},&#39; image&#39;]);
+    end
+    
+end
+
+i=5;
+j=5;
+num = [4,4,4,4,3];
+switch i
+    case 1
+        % uniform
+        noise = imnoise2(noise_type{i},M,N,0,0.1);
+        noise_img = im2uint8(im2double(orig_img)+noise);
+    case 2
+        % gaussian
+        noise = imnoise2(noise_type{i},M,N,0,0.1);
+        noise_img = im2uint8(im2double(orig_img)+noise);
+    case 3
+        % salt
+        noise = imnoise2(noise_type{i},M,N,0,0.1);
+        noise_img1 = orig_img;
+        noise_img1(noise == 1) = 255;
+        % pepper
+        noise = imnoise2(noise_type{i},M,N,0.1,0);
+        noise_img2 = orig_img;
+        noise_img2(noise == 0) = 0;
+    case 4
+        % salt &amp; peper
+        noise = imnoise2(noise_type{3},M,N,0.1,0.1);
+        noise_img = orig_img;
+        noise_img(noise == 1) = 255;
+        noise_img(noise == 0) = 0;
+    case 5
+        % uniform
+        noise = imnoise2(noise_type{1},M,N,0,0.1);
+        noise_img1 = im2uint8(im2double(orig_img)+noise);
+        % salt &amp; peper
+        noise = imnoise2(noise_type{3},M,N,0.1,0.1);
+        noise_img2 = noise_img1;
+        noise_img2(noise == 1) = 255;
+        noise_img2(noise == 0) = 0;
+       
+
+end
+switch j
+    case 1
+        set(gcf, &#39;position&#39;, [0 0 num(j)*400 300]);
+        subplot(1,num(j),1),imshow(orig_img);title(&#39;original image&#39;);
+        subplot(1,num(j),2),imshow(noise_img);title([noise_type{i},&#39; image&#39;]);
+        amean_uniform_img = spfilt(noise_img,&#39;amean&#39;);
+        subplot(1,num(j),3),imshow(amean_uniform_img);title([filter_type{1},&#39; result&#39;]);
+        gmean_uniform_img = spfilt(noise_img,&#39;gmean&#39;);
+        subplot(1,num(j),4),imshow(gmean_uniform_img);title([filter_type{2},&#39; result&#39;]);
+    case 2
+        set(gcf, &#39;position&#39;, [0 0 num(j)*400 300]);
+        subplot(1,num(j),1),imshow(noise_img1);title(&#39;salt image&#39;);
+        subplot(1,num(j),2),imshow(noise_img2);title(&#39;pepper image&#39;);
+        chmean_salt_img = spfilt(noise_img1,&#39;chmean&#39;,3,3,-1.5);
+        subplot(1,num(j),3),imshow(chmean_salt_img);title(&#39;salt result&#39;);
+        chmean_pepper_img = spfilt(noise_img2,&#39;chmean&#39;,3,3,1.5);
+        subplot(1,num(j),4),imshow(chmean_pepper_img);title(&#39;pepper result&#39;);
+    case 3
+        set(gcf, &#39;position&#39;, [0 0 num(j)*400 300]);
+        subplot(1,num(j),1),imshow(noise_img);title(&#39;salt&amp;pepper image&#39;);
+        median_salt_pepper_img1 = spfilt(noise_img,&#39;median&#39;);
+        subplot(1,num(j),2),imshow(median_salt_pepper_img1);title(&#39;median 1st&#39;);
+        median_salt_pepper_img2 = spfilt(median_salt_pepper_img1,&#39;median&#39;);
+        subplot(1,num(j),3),imshow(median_salt_pepper_img2);title(&#39;median 2nd&#39;);
+        median_salt_pepper_img3 = spfilt(median_salt_pepper_img2,&#39;median&#39;);
+        subplot(1,num(j),4),imshow(median_salt_pepper_img3);title(&#39;median 3rd&#39;);
+    case 4
+        set(gcf, &#39;position&#39;, [0 0 num(j)*400 300]);
+        subplot(1,num(j),1),imshow(noise_img1);title(&#39;salt image&#39;);
+        subplot(1,num(j),2),imshow(noise_img2);title(&#39;pepper image&#39;);
+        min_salt_img = spfilt(noise_img1,&#39;min&#39;,3,3);
+        max_pepper_img = spfilt(noise_img2,&#39;max&#39;,3,3);
+        subplot(1,num(j),3),imshow(min_salt_img);title(&#39;min result&#39;);
+        subplot(1,num(j),4),imshow(max_pepper_img);title(&#39;max result&#39;);
+    case 5
+        set(gcf, &#39;position&#39;, [0 0 num(j)*400 600]);
+        subplot(2,num(j),1),imshow(noise_img1);title(&#39;uniform image&#39;);
+        subplot(2,num(j),2),imshow(noise_img2);title(&#39;salt&amp;pepper image&#39;);
+        amean_result = spfilt(noise_img2,&#39;amean&#39;,5,5);
+        subplot(2,num(j),3),imshow(amean_result);title(&#39;amean result&#39;);
+        gmean_result = spfilt(amean_result,&#39;gmean&#39;,5,5);
+        subplot(2,num(j),4),imshow(gmean_result);title(&#39;gmean result&#39;);
+        median_result = spfilt(gmean_result,&#39;median&#39;,5,5);
+        subplot(2,num(j),5),imshow(median_result);title(&#39;median result&#39;);
+        altrimmed_result = spfilt(median_result,&#39;atrimmed&#39;,5,5,4);
+        subplot(2,num(j),6),imshow(altrimmed_result);title(&#39;atrimmed result&#39;);
+        
+        
+        
+end
+</code></pre></div>
+
+<h2 id="toc_6">Noise Image</h2>
+
+<h3 id="toc_7">Uniform Noise Image</h3>
+
+<p><img src="http://ww3.sinaimg.cn/large/006y8mN6jw1f9vfa3gwjjj30xc08cdht.jpg" alt=""></p>
+
+<h3 id="toc_8">Gaussian Noise Image</h3>
+
+<p><img src="http://ww1.sinaimg.cn/large/006y8mN6jw1f9vfacyrzaj30xc08cmz7.jpg" alt=""></p>
+
+<h3 id="toc_9">Salt &amp; Pepper Noise Image</h3>
+
+<p><img src="http://ww2.sinaimg.cn/large/006y8mN6jw1f9vifz7t0cj30xc08cac1.jpg" alt=""><br>
+<img src="http://ww4.sinaimg.cn/large/006y8mN6jw1f9vig6nbkuj30xc08c40o.jpg" alt=""></p>
+
+<h3 id="toc_10">Lognormal Noise Image</h3>
+
+<p><img src="http://ww3.sinaimg.cn/large/006y8mN6jw1f9vfb6aa0hj30xc08cjsl.jpg" alt=""></p>
+
+<h3 id="toc_11">Rayleigh Noise Image</h3>
+
+<p><img src="http://ww1.sinaimg.cn/large/006y8mN6jw1f9vfbi1n23j30xc08cabv.jpg" alt=""></p>
+
+<h3 id="toc_12">Exponential Noise Image</h3>
+
+<p><img src="http://ww4.sinaimg.cn/large/006y8mN6jw1f9vfbpk085j30xc08c767.jpg" alt=""></p>
+
+<h3 id="toc_13">Erlang Noise Image</h3>
+
+<p><img src="http://ww4.sinaimg.cn/large/006y8mN6jw1f9vfbw6rmwj30xc08ct9s.jpg" alt=""></p>
+
+<h2 id="toc_14">Filter</h2>
+
+<h3 id="toc_15">Arithmetic &amp; Geometric Mean Filter on Uniform Noise</h3>
+
+<p><img src="http://ww4.sinaimg.cn/large/006y8mN6jw1f9vk20umk5j312y08cacb.jpg" alt=""></p>
+
+<h3 id="toc_16">Contraharmonic Mean Filter on Salt &amp; Pepper Noise</h3>
+
+<p><img src="http://ww2.sinaimg.cn/large/006y8mN6jw1f9vk38q0ohj312y08cgok.jpg" alt=""></p>
+
+<h3 id="toc_17">Arithmetic &amp; Geometric Mean Filter on Gaussian Noise</h3>
+
+<p><img src="http://ww4.sinaimg.cn/large/006y8mN6jw1f9vk3o3s3rj312y08cdij.jpg" alt=""></p>
+
+<h3 id="toc_18">Median FIlter on Salt &amp; Pepper Noise</h3>
+
+<p><img src="http://ww3.sinaimg.cn/large/006y8mN6jw1f9vk45ax4vj312y08cacv.jpg" alt=""></p>
+
+<h3 id="toc_19">Max &amp; Min Filter on Salt &amp; Pepper Noise</h3>
+
+<p><img src="http://ww3.sinaimg.cn/large/006y8mN6jw1f9vk4uevvmj312y08cwhf.jpg" alt=""></p>
+
+<h3 id="toc_20">Combined Filters on Gaussian &amp; Salt &amp; Pepper Noise</h3>
+
+<p><img src="http://ww4.sinaimg.cn/large/006y8mN6jw1f9vk67hcbcj30xc0go41y.jpg" alt=""></p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.matlab={string:/\B'(?:''|[^'\n])*'/,comment:[/%\{[\s\S]*?\}%/,/%.+/],number:/\b-?(?:\d*\.?\d+(?:[eE][+-]?\d+)?(?:[ij])?|[ij])\b/,keyword:/\b(?:break|case|catch|continue|else|elseif|end|for|function|if|inf|NaN|otherwise|parfor|pause|pi|return|switch|try|while)\b/,"function":/(?!\d)\w+(?=\s*\()/,operator:/\.?[*^\/\\']|[+\-:@]|[<>=~]=?|&&?|\|\|?/,punctuation:/\.{3}|[.,;\[\](){}!]/};
+</script>
+
+<script type="text/javascript">
+!function(){"undefined"!=typeof self&&self.Prism&&self.document&&Prism.hooks.add("complete",function(e){if(e.code){var t=e.element.parentNode,s=/\s*\bline-numbers\b\s*/;if(t&&/pre/i.test(t.nodeName)&&(s.test(t.className)||s.test(e.element.className))&&!e.element.querySelector(".line-numbers-rows")){s.test(e.element.className)&&(e.element.className=e.element.className.replace(s,"")),s.test(t.className)||(t.className+=" line-numbers");var n,a=e.code.match(/\n(?!$)/g),l=a?a.length+1:1,m=new Array(l+1);m=m.join("<span></span>"),n=document.createElement("span"),n.className="line-numbers-rows",n.innerHTML=m,t.hasAttribute("data-start")&&(t.style.counterReset="linenumber "+(parseInt(t.getAttribute("data-start"),10)-1)),e.element.appendChild(n)}}})}();
+</script>
+
+<script type="text/javascript">
+!function(){if("undefined"!=typeof self&&self.Prism&&self.document){var e={html:"HTML",xml:"XML",svg:"SVG",mathml:"MathML",css:"CSS",clike:"C-like",javascript:"JavaScript",abap:"ABAP",actionscript:"ActionScript",apacheconf:"Apache Configuration",apl:"APL",applescript:"AppleScript",asciidoc:"AsciiDoc",aspnet:"ASP.NET (C#)",autoit:"AutoIt",autohotkey:"AutoHotkey",basic:"BASIC",csharp:"C#",cpp:"C++",coffeescript:"CoffeeScript","css-extras":"CSS Extras",fsharp:"F#",glsl:"GLSL",http:"HTTP",inform7:"Inform 7",json:"JSON",latex:"LaTeX",lolcode:"LOLCODE",matlab:"MATLAB",mel:"MEL",nasm:"NASM",nginx:"nginx",nsis:"NSIS",objectivec:"Objective-C",ocaml:"OCaml",parigp:"PARI/GP",php:"PHP","php-extras":"PHP Extras",powershell:"PowerShell",jsx:"React JSX",rest:"reST (reStructuredText)",sas:"SAS",sass:"Sass (Sass)",scss:"Sass (Scss)",sql:"SQL",typescript:"TypeScript",vhdl:"VHDL",vim:"vim",wiki:"Wiki markup",yaml:"YAML"};Prism.hooks.add("before-highlight",function(s){var a=s.element.parentNode;if(a&&/pre/i.test(a.nodeName)){var t,i,r=a.getAttribute("data-language")||e[s.language]||s.language.substring(0,1).toUpperCase()+s.language.substring(1),l=a.previousSibling;l&&/\s*\bprism-show-language\b\s*/.test(l.className)&&l.firstChild&&/\s*\bprism-show-language-label\b\s*/.test(l.firstChild.className)?i=l.firstChild:(t=document.createElement("div"),i=document.createElement("div"),i.className="prism-show-language-label",t.className="prism-show-language",t.appendChild(i),a.parentNode.insertBefore(t,a)),i.innerHTML=r}})}}();
+</script>
+
+<script type="text/x-mathjax-config">
+(function () {
+
+MathJax.Hub.Config({
+	'showProcessingMessages': false,
+	'messageStyle': 'none'
+});
+
+if (typeof MathJaxListener !== 'undefined') {
+	MathJax.Hub.Register.StartupHook('End', function () {
+		MathJaxListener.invokeCallbackForKey_('End');
+	});
+}
+
+})();
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>

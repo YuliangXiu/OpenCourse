@@ -1,0 +1,28 @@
+{
+    "name": "Lab 2",
+    "endpoint": "cal/cs61a/fa15/lab02",
+    "src": [
+        "lab02.py",
+        "lab02_extra.py"
+    ],
+    "tests": {
+        "tests/hof.py": "ok_test",
+        "tests/lambda.py": "ok_test",
+        "lab02.py:make_derivative": "doctest",
+        "lab02.py:caesar_generator": "doctest",
+        "lab02.py:make_encrypter": "doctest",
+        "lab02.py:make_decrypter": "doctest",
+        "lab02_extra.py:generator": "doctest",
+        "tests/community.py": "ok_test",
+        "lab02_extra.py:count_cond": "doctest",
+        "lab02_extra.py:cycle": "doctest"
+    },
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "unlock",
+        "grading",
+        "backup"
+    ]
+}

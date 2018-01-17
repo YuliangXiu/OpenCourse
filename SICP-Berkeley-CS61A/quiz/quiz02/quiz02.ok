@@ -1,0 +1,17 @@
+{
+    "name": "Quiz 2",
+    "endpoint": "cal/cs61a/fa15/quiz02",
+    "src": [
+        "quiz02.py"
+    ],
+    "tests": {
+      "quiz02.py:subtreesum": "doctest",
+      "quiz02.py:Mint": "doctest"
+    },
+    "protocols": [
+        "file_contents",
+        "analytics",
+        "grading",
+        "backup"
+    ]
+}

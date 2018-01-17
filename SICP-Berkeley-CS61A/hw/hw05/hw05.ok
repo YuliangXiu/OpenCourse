@@ -1,0 +1,26 @@
+{
+    "name": "Homework 5",
+    "endpoint": "cal/cs61a/fa15/hw05",
+    "src": [
+        "hw05.py"
+    ],
+    "tests": {
+        "hw05.py": "doctest"
+    },
+    "default_tests": [
+        "total_weight",
+        "with_totals",
+        "balanced",
+        "make_withdraw",
+        "make_joint",
+        "VendingMachine",
+        "MissManners"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "grading",
+        "backup"
+    ]
+}

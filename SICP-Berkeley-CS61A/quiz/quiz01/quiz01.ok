@@ -1,0 +1,20 @@
+{
+    "name": "Quiz 1",
+    "endpoint": "cal/cs61a/fa15/quiz01",
+    "src": [
+        "quiz01.py"
+    ],
+    "tests": {
+        "quiz01.py:diff": "doctest",
+        "quiz01.py:abundant": "doctest",
+        "quiz01.py:amicable": "doctest"
+    },
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "unlock",
+        "grading",
+        "backup"
+    ]
+}

@@ -1,0 +1,29 @@
+function [f,g] = logistic_regression_vec(theta, X,y)
+  %
+  % Arguments:
+  %   theta - A column vector containing the parameter values to optimize.
+  %   X - The examples stored in a matrix.  
+  %       X(i,j) is the i'th coordinate of the j'th example.
+  %   y - The label for each example.  y(j) is the j'th example's label.
+  %
+  m=size(X,2);
+  
+  % initialize objective value and gradient.
+  f = 0;
+  g = zeros(size(theta));
+  
+
+  %
+  % TODO:  Compute the logistic regression objective function and gradient 
+  %        using vectorized code.  (It will be just a few lines of code!)
+  %        Store the objective function value in 'f', and the gradient in 'g'.
+  %
+%%% YOUR CODE HERE %%%
+
+	one2 = ones(1,m);
+	f = -sum(y*log(one2/(one2+exp(-(theta'*X))))'+(one2-y)*log(one2-(one2/(one2+exp(-(theta'*X)))))');
+	g = sum(X*((one2/(one2+exp(-(theta'*X))))-y)',2);
+	%f =-sum(bsxfun(@times,y,log(bsxfun(@rdivide,one2,(one2+exp(-(theta'*X))))),2)+bsxfun(@times,(one2-y),log(one2-(bsxfun(@rdivide,1,(one2+exp(-(theta'*X)))))),2));
+	%g = sum(bsxfun(@times,X,((bsxfun(@rdivide,one2,(one2+exp(-(theta'*X)))))-y),2));	
+
+	

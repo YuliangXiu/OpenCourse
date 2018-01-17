@@ -1,0 +1,23 @@
+{
+    "name": "Homework 6",
+    "endpoint": "cal/cs61a/fa15/hw06",
+    "src": [
+        "hw06.py"
+    ],
+    "tests": {
+        "hw06.py": "doctest"
+    },
+    "default_tests": [
+        "every_other",
+        "mutate_reverse",
+        "long_paths",
+        "partial_tree"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "grading",
+        "backup"
+    ]
+}

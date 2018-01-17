@@ -1,0 +1,30 @@
+{
+    "name": "Lab 7",
+    "endpoint": "cal/cs61a/fa15/lab07",
+    "src": [
+        "lab07.py",
+        "lab07_extra.py"
+    ],
+    "tests": {
+        "tests/link.py": "ok_test",
+        "lab07.py:Link": "doctest",
+        "lab07.py:insert": "doctest",
+        "tests/trees.py": "ok_test",
+        "lab07.py:same_shape": "doctest",
+        "lab07_extra.py:cumulative_sum": "doctest",
+        "lab07_extra.py:list_to_link": "doctest",
+        "lab07_extra.py:link_to_list": "doctest",
+        "lab07_extra.py:reverse": "doctest",
+        "lab07_extra.py:deep_map": "doctest",
+        "lab07_extra.py:has_cycle": "doctest",
+        "lab07_extra.py:has_cycle_constant": "doctest"
+    },
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}

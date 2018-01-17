@@ -1,0 +1,23 @@
+{
+    "name": "Lab 8",
+    "endpoint": "cal/cs61a/fa15/lab08",
+    "src": [
+        "lab08.py"
+    ],
+    "tests": {
+        "tests/foobar.py": "ok_test",
+        "tests/attributes.py": "ok_test",
+        "lab08.py:make_advanced_counter_maker": "doctest",
+        "lab08.py:intersection": "doctest",
+        "lab08.py:trade": "doctest",
+        "tests/boom.py": "ok_test"
+    },
+    "protocols": [
+        "restore",
+        "file_contents",
+        "unlock",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}

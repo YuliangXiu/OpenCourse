@@ -1,0 +1,22 @@
+{
+    "name": "Lab 3",
+    "endpoint": "cal/cs61a/fa15/lab03",
+    "src": [
+        "lab03.py",
+        "lab03_extra.py"
+    ],
+    "tests": {
+        "tests/boolean.py": "ok_test",
+        "tests/lambda.py": "ok_test",
+        "lab03.py": "doctest",
+        "lab03_extra.py": "doctest"
+    },
+    "protocols": [
+        "restore",
+        "file_contents",
+        "analytics",
+        "unlock",
+        "grading",
+        "backup"
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "name": "Homework 4",
+    "endpoint": "cal/cs61a/fa15/hw04",
+    "src": [
+        "hw04.py"
+    ],
+    "tests": {
+        "hw04.py": "doctest"
+    },
+    "default_tests": [
+        "deep_len",
+        "str_interval",
+        "add_interval",
+        "mul_interval",
+        "div_interval",
+        "sub_interval",
+        "quadratic"
+    ],
+    "protocols": [
+        "restore",
+        "file_contents",
+        "grading",
+        "analytics",
+        "backup"
+    ]
+}

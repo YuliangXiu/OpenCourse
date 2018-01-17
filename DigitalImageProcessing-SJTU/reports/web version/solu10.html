@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>solu10</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js Dark theme for JavaScript, CSS and HTML
+ * Based on the slides of the talk “/Reg(exp){2}lained/”
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: white;
+	background: none;
+	text-shadow: 0 -.1em .2em black;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+pre[class*="language-"],
+:not(pre) > code[class*="language-"] {
+	background: hsl(30, 20%, 25%);
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border: .3em solid hsl(30, 20%, 40%);
+	border-radius: .5em;
+	box-shadow: 1px 1px .5em black inset;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .15em .2em .05em;
+	border-radius: .3em;
+	border: .13em solid hsl(30, 20%, 40%);
+	box-shadow: 1px 1px .3em -.1em black inset;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: hsl(30, 20%, 50%);
+}
+
+.token.punctuation {
+	opacity: .7;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+	color: hsl(350, 40%, 70%);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: hsl(75, 70%, 60%);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: hsl(40, 90%, 60%);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: hsl(350, 40%, 70%);
+}
+
+.token.regex,
+.token.important {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.token.deleted {
+	color: red;
+}
+</style>
+
+<style type="text/css">
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		pointer-events: none;
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
+</style>
+
+<style type="text/css">
+div.prism-show-language {
+	position: relative;
+}
+
+div.prism-show-language > div.prism-show-language-label {
+	color: black;
+	background-color: #CFCFCF;
+	display: inline-block;
+	position: absolute;
+	bottom: auto;
+	left: auto;
+	top: 0;
+	right: 0;
+	width: auto;
+	height: auto;
+	font-size: 0.9em;
+	border-radius: 0 0 0 5px;
+	padding: 0 0.5em;
+	text-shadow: none;
+	z-index: 1;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-webkit-transform: none;
+	-moz-transform: none;
+	-ms-transform: none;
+	-o-transform: none;
+	transform: none;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0"><center>Digital Image Processing</center></h1>
+
+<p><h6 align='center'>BB1603391 116033910045 修宇亮</p>
+
+<h2 id="toc_1">Problem 10 Requirement</h2>
+
+<p><img src="http://xiublog.qiniudn.com/image/2016-12-23-085530.jpg" alt=""></p>
+
+<h2 id="toc_2">Boundari Following</h2>
+
+<h3 id="toc_3">main.m</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">clear;clc;
+img = mat2gray(imread(&#39;noisy_stroke.tif&#39;));
+ave_img = imfilter(img,ones(9,9)/81);
+otsu_thresh = graythresh(ave_img);
+otsu_img = im2bw(ave_img,otsu_thresh);
+se = strel(&#39;square&#39;,3);
+eroded = imerode(otsu_img,se);
+boundary_img = im2bw(imsubtract(otsu_img,imfill(eroded,&#39;holes&#39;)),0);
+[row,col] = find(boundary_img==1);
+[s,su] = bsubsamp([row col],50);
+
+subsample = zeros(570,570);
+for i=1:32
+    subsample(s(i,1),s(i,2))=1;
+end
+
+[x,y] = clockwise_order(s(:,1),s(:,2));
+c = connectpoly(x,y);
+lines = zeros(570,570);
+for i=1:1664
+    lines(c(i,1),c(i,2))=1;
+end
+
+[m,n] = clockwise_order(su(:,1),su(:,2));
+cn_result = fchcode([m,n],8);
+
+subplot(2,3,1),imshow(img);title(&#39;original&#39;);
+subplot(2,3,2),imshow(ave_img);title(&#39;imfilter ave&#39;);
+subplot(2,3,3),imshow(otsu_img);title(&#39;otsu&#39;);
+subplot(2,3,4),imshow(boundary_img);title(&#39;boundary&#39;);
+subplot(2,3,5),imshow(subsample);title(&#39;subsample&#39;);
+subplot(2,3,6),imshow(lines);title(&#39;lines&#39;);</code></pre></div>
+
+<h3 id="toc_4">bsubsamp.m</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">function [s, su] = bsubsamp(b, gridsep)
+%BSUBSAMP Subsample a boundary.
+%   [S, SU] = BSUBSAMP(B, GRIDSEP) subsamples the boundary B by
+%   assigning each of its points to the grid node to which it is
+%   closest.  The grid is specified by GRIDSEP, which is the
+%   separation in pixels between the grid lines. For example, if
+%   GRIDSEP = 2, there are two pixels in between grid lines. So, for
+%   instance, the grid points in the first row would be at (1,1),
+%   (1,4), (1,6), ..., and similarly in the y direction. The value
+%   of GRIDSEP must be an even integer. The boundary is specified by
+%   a set of coordinates in the form of an np-by-2 array.  It is
+%   assumed that the boundary is one pixel thick. 
+%
+%   Output S is the subsampled boundary. Output SU is normalized so
+%   that the grid separation is unity.  This is useful for obtaining
+%   the Freeman chain code of the subsampled boundary.
+
+%   Copyright 2002-2004 R. C. Gonzalez, R. E. Woods, &amp; S. L. Eddins
+%   Digital Image Processing Using MATLAB, Prentice-Hall, 2004
+%   $Revision: 1.8 $  $Date: 2004/11/04 20:17:59 $
+ 
+% Check input.
+[np, nc] = size(b);
+if np &lt; nc 
+   error(&#39;B must be of size np-by-2.&#39;); 
+end
+if gridsep/2 ~= round(gridsep/2) 
+   error(&#39;GRIDSEP must be an even integer.&#39;)
+end
+
+% Some boundary tracing programs, such as boundaries.m, end with 
+% the beginning, resulting in a sequence in which the coordinates
+% of the first and last points are the same. If this is the case 
+% in b, eliminate the last point.
+if isequal(b(1, :), b(np, :))
+   np = np - 1;
+   b = b(1:np, :);
+end
+
+% Find the max x and y spanned by the boundary.
+xmax = max(b(:, 1));
+ymax = max(b(:, 2));
+
+% Determine the integral number of grid lines with gridsep points in
+% between them that encompass the intervals [1,xmax], [1,ymax].
+GLx = ceil((xmax + gridsep)/(gridsep + 1));
+GLy = ceil((ymax + gridsep)/(gridsep + 1));
+
+% Form vectors of x and y grid locations.
+I = 1:GLx;
+% Vector of grid line locations intersecting x-axis.
+X(I) = gridsep*I + (I - gridsep); 
+
+J = 1:GLy;
+% Vector of grid line locations intersecting y-axis.
+Y(J) = gridsep*J + (J - gridsep); 
+
+% Compute both components of the cityblock distance between each
+% element of b and all the grid-line intersections.  Assign each
+% point to the grid location for which each comp of the cityblock
+% distance was &lt;= gridsep/2. Note the use of meshgrid to
+% optimize the code. Keep in mind that meshgrid requires that columns
+% be listed first (see Chapter 2).
+DIST = gridsep/2;
+[YG, XG] = meshgrid(Y, X);
+Q = 1;
+for k=1:np
+   [I,J] = find(abs(XG - b(k, 1)) &lt;= DIST &amp; abs(YG - b(k, 2)) &lt;= ...
+                DIST); 
+   % If point b(k,:) is equidistant from two or more grid intersections,
+   % assign the point arbitrarily to the first one:
+   I = I(1);
+   J = J(1);
+   ord = k; % To keep track of order of input coordinates.
+   d1(Q, :) = cat(2, Y(J), ord);
+   d2(Q, :) = cat(2, X(I), ord);
+   Q = Q + 1;
+end
+ 
+% d is the set of points assigned to the new grid with line
+% separation of gridsep. Note that it is formed as d=(d2,d1) to
+% compensate for the coordinate transposition inherent in using
+% meshgrid (see Chapter 2). 
+d = cat(2, d2(:, 1), d1); % The second column of d1 &amp; d2 is ord.
+
+% Sort the points using the values in ord, which is the last col in
+% d.
+d = fliplr(d); % So the last column becomes first.
+d = sortrows(d);
+d = fliplr(d); % Flip back.
+
+% Eliminate duplicate rows in the first two components of 
+% d to create the output. The cw or ccw order MUST be preserved.
+s = d(:, 1:2);
+[s, m, n] = unique(s, &#39;rows&#39;);
+
+% Function unique sorts the data--Restore to original order
+% by using the contents of m.
+s = [s, m];
+s = fliplr(s);
+s = sortrows(s);
+s = fliplr(s);
+s = s(:, 1:2);
+
+% Scale to unit grid so that can use directly to obtain Freeman
+% chain code.  The shape does not change.
+su = round(s./gridsep) + 1;</code></pre></div>
+
+<h3 id="toc_5">clockwise_order.m</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">function [x y] = clockwise_order(x,y)
+    cx = mean(x);
+    cy = mean(y);
+    a = atan2(y - cy, x - cx);
+    [~, order] = sort(a);
+    x = x(order);
+    y = y(order);
+end</code></pre></div>
+
+<h3 id="toc_6">connectpoly.m</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">function c = connectpoly(x, y)
+%CONNECTPOLY Connects vertices of a polygon.
+%   C = CONNECTPOLY(X, Y) connects the points with coordinates given
+%   in X and Y with straight lines. These points are assumed to be a
+%   sequence of polygon vertices organized in the clockwise or
+%   counterclockwise direction. The output, C, is the set of points
+%   along the boundary of the polygon in the form of an nr-by-2
+%   coordinate sequence in the same direction as the input. The last
+%   point in the sequence is equal to the first.
+
+%   Copyright 2002-2004 R. C. Gonzalez, R. E. Woods, &amp; S. L. Eddins
+%   Digital Image Processing Using MATLAB, Prentice-Hall, 2004
+%   $Revision: 1.4 $  $Date: 2003/11/21 14:29:16 $
+
+v = [x(:), y(:)];
+
+% Close polygon.
+if ~isequal(v(end, :), v(1, :))
+   v(end + 1, :) = v(1, :);
+end
+
+% Connect vertices.
+segments = cell(1, length(v) - 1);
+for I = 2:length(v)
+   [x, y] = intline(v(I - 1, 1), v(I, 1), v(I - 1, 2), v(I, 2));
+   segments{I - 1} = [x, y];
+end
+
+c = cat(1, segments{:});
+</code></pre></div>
+
+<h3 id="toc_7">intline.m</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">function [x, y] = intline(x1, x2, y1, y2)
+%INTLINE Integer-coordinate line drawing algorithm.
+%  [X, Y] = INTLINE(X1, X2, Y1, Y2) computes an
+%  approximation to the line segment joining (X1, Y1) and
+%  (X2, Y2) with integer coordinates.  X1, X2, Y1, and Y2
+%  should be integers.  INTLINE is reversible; that is,
+%  INTLINE(X1, X2, Y1, Y2) produces the same results as
+%  FLIPUD(INTLINE(X2, X1, Y2, Y1)).
+
+%   Copyright 1993-2002 The MathWorks, Inc.  Used with permission.
+%   $Revision: 1.4 $  $Date: 2003/11/21 14:38:20 $
+
+dx = abs(x2 - x1);
+dy = abs(y2 - y1);
+
+% Check for degenerate case.
+if ((dx == 0) &amp; (dy == 0))
+   x = x1;
+   y = y1;
+  return;
+end
+
+flip = 0;
+if (dx &gt;= dy)
+   if (x1 &gt; x2)
+      % Always &quot;draw&quot; from left to right.
+      t = x1; x1 = x2; x2 = t;
+      t = y1; y1 = y2; y2 = t;
+      flip = 1;
+   end
+   m = (y2 - y1)/(x2 - x1);
+   x = (x1:x2).&#39;;
+   y = round(y1 + m*(x - x1));
+else
+   if (y1 &gt; y2)
+      % Always &quot;draw&quot; from bottom to top.
+      t = x1; x1 = x2; x2 = t;
+      t = y1; y1 = y2; y2 = t;
+      flip = 1;
+   end
+   m = (x2 - x1)/(y2 - y1);
+   y = (y1:y2).&#39;;
+   x = round(x1 + m*(y - y1));
+end
+  
+if (flip)
+   x = flipud(x);
+   y = flipud(y);
+end</code></pre></div>
+
+<h3 id="toc_8">fchcode.m</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">function  c = fchcode(b, conn, dir)
+%FCHCODE Computes the Freeman chain code of a boundary.
+%   C = FCHCODE(B) computes the 8-connected Freeman chain code of a
+%   set of 2-D coordinate pairs contained in B, an np-by-2 array. C
+%   is a structure with the following fields: 
+%
+%     c.fcc    = Freeman chain code (1-by-np)
+%     c.diff   = First difference of code c.fcc (1-by-np)
+%     c.mm     = Integer of minimum magnitude from c.fcc (1-by-np)
+%     c.diffmm = First difference of code c.mm (1-by-np)
+%     c.x0y0   = Coordinates where the code starts (1-by-2) 
+%
+%   C = FCHCODE(B, CONN) produces the same outputs as above, but
+%   with the code connectivity specified in CONN. CONN can be 8 for
+%   an 8-connected chain code, or CONN can be 4 for a 4-connected
+%   chain code. Specifying CONN=4 is valid only if the input
+%   sequence, B, contains transitions with values 0, 2, 4, and 6,
+%   exclusively.
+%       
+%   C = FHCODE(B, CONN, DIR) produces the same outputs as above, but,
+%   in addition, the desired code direction is specified. Values for
+%   DIR can be: 
+%
+%     &#39;same&#39;      Same as the order of the sequence of points in b.
+%                 This is the default.
+%
+%     &#39;reverse&#39;   Outputs the code in the direction opposite to the 
+%                 direction of the points in B.  The starting point 
+%                 for each DIR is the same.
+%
+%   The elements of B are assumed to correspond to a 1-pixel-thick,
+%   fully-connected, closed boundary. B cannot contain duplicate
+%   coordinate pairs, except in the first and last positions, which
+%   is a common feature of boundary tracing programs. 
+%
+%   FREEMAN CHAIN CODE REPRESENTATION
+%   The table on the left shows the 8-connected Freeman chain codes 
+%   corresponding to allowed deltax, deltay pairs. An 8-chain is
+%   converted to a 4-chain if (1) if conn = 4; and (2) only
+%   transitions 0, 2, 4, and 6 occur in the 8-code.  Note that
+%   dividing 0, 2, 4, and 6 by 2 produce the 4-code. 
+%
+%       -----------------------  ----------------
+%       deltax | deltay | 8-code  corresp 4-code
+%       -----------------------  ----------------
+%         0        1       0            0
+%        -1        1       1
+%        -1        0       2            1
+%        -1       -1       3
+%         0       -1       4            2
+%         1       -1       5
+%         1        0       6            3
+%         1        1       7
+%       -----------------------  ----------------
+%
+%   The formula z = 4*(deltax + 2) + (deltay + 2) gives the following
+%   sequence corresponding to rows 1-8 in the preceding table: z =
+%   11,7,6,5,9,13,14,15. These values can be used as indices into the
+%   table, improving the speed of computing the chain code. The
+%   preceding formula is not unique, but it is based on the smallest
+%   integers (4 and 2) that are powers of 2. 
+
+%   Copyright 2002-2004 R. C. Gonzalez, R. E. Woods, &amp; S. L. Eddins
+%   Digital Image Processing Using MATLAB, Prentice-Hall, 2004
+%   $Revision: 1.6 $  $Date: 2003/11/21 14:34:49 $
+
+% Preliminaries.
+if nargin == 1 
+   dir = &#39;same&#39;; 
+   conn = 8;
+elseif nargin == 2 
+   dir = &#39;same&#39;;
+elseif nargin == 3   
+   % Nothing to do here.
+else 
+   error(&#39;Incorrect number of inputs.&#39;)
+end
+[np, nc] = size(b);
+if np &lt; nc 
+   error(&#39;B must be of size np-by-2.&#39;); 
+end
+
+% Some boundary tracing programs, such as boundaries.m, output a
+% sequence in which the coordinates of the first and last points are
+% the same. If this is the case, eliminate the last point. 
+if isequal(b(1, :), b(np, :))
+   np = np - 1;
+   b = b(1:np, :);
+end
+
+% Build the code table using the single indices from the formula 
+% for z given above:
+C(11)=0; C(7)=1; C(6)=2; C(5)=3; C(9)=4;
+C(13)=5; C(14)=6; C(15)=7;
+
+% End of Preliminaries.
+
+% Begin processing.
+x0 = b(1, 1);
+y0 = b(1, 2);
+c.x0y0 = [x0, y0];
+
+% Make sure the coordinates are organized sequentially:
+% Get the deltax and deltay between successive points in b. The 
+% last row of a is the first row of b.
+a = circshift(b, [-1, 0]);
+
+% DEL = a - b is an nr-by-2 matrix in which the rows contain the
+% deltax and deltay between successive points in b. The two 
+% components in the kth row of matrix DEL are deltax and deltay 
+% between point (xk, yk) and (xk+1, yk+1).  The last row of DEL 
+% contains the deltax and deltay between (xnr, ynr) and (x1, y1),
+% (i.e., between the last and first points in b).
+DEL = a - b;
+
+% If the abs value of either (or both) components of a pair 
+% (deltax, deltay) is greater than 1, then by definition the curve 
+% is broken (or the points are out of order), and the program 
+% terminates.
+if any(abs(DEL(:, 1)) &gt; 1) | any(abs(DEL(:, 2)) &gt; 1);
+   error(&#39;The input curve is broken or points are out of order.&#39;)
+end
+
+% Create a single index vector using the formula described above.
+z = 4*(DEL(:, 1) + 2) + (DEL(:, 2) + 2);
+
+% Use the index to map into the table. The following are
+% the Freeman 8-chain codes, organized in a 1-by-np array.
+fcc = C(z);
+
+% Check if direction of code sequence needs to be reversed.
+if strcmp(dir, &#39;reverse&#39;)
+   fcc = coderev(fcc); % See below for function coderev.
+end
+
+% If 4-connectivity is specified, check that all components
+% of fcc are 0, 2, 4, or 6.
+if conn == 4
+   val = find(fcc == 1 | fcc == 3 | fcc == 5 | fcc ==7 );
+   if isempty(val)
+      fcc = fcc./2;
+   else
+      warning(&#39;The specified 4-connected code cannot be satisfied.&#39;)
+   end
+end
+
+% Freeman chain code for structure output.
+c.fcc = fcc;
+
+% Obtain the first difference of fcc.
+c.diff = codediff(fcc,conn); % See below for function codediff.
+
+% Obtain code of the integer of minimum magnitude.
+c.mm = minmag(fcc); % See below for function minmag.
+
+% Obtain the first difference of fcc
+c.diffmm = codediff(c.mm, conn);
+
+%-------------------------------------------------------------------%
+function cr = coderev(fcc)
+%   Traverses the sequence of 8-connected Freeman chain code fcc in
+%   the opposite direction, changing the values of each code
+%   segment. The starting point is not changed. fcc is a 1-by-np
+%   array.
+
+% Flip the array left to right.  This redefines the starting point 
+% as the last point and reverses the order of &quot;travel&quot; through the 
+% code.
+cr = fliplr(fcc);
+
+% Next, obtain the new code values by traversing the code in the 
+% opposite direction. (0 becomes 4, 1 becomes 5, ... , 5 becomes 1, 
+% 6 becomes 2, and 7 becomes 3).
+ind1 = find(0 &lt;= cr &amp; cr &lt;= 3);
+ind2 = find(4 &lt;= cr &amp; cr &lt;= 7);
+cr(ind1) = cr(ind1) + 4;
+cr(ind2) = cr(ind2) - 4;
+
+%-------------------------------------------------------------------%
+function z = minmag(c)
+%MINMAG Finds the integer of minimum magnitude in a chain code.
+%   Z = MINMAG(C) finds the integer of minimum magnitude in a given
+%   4- or 8-connected Freeman chain code, C. The code is assumed to
+%   be a 1-by-np array.
+
+% The integer of minimum magnitude starts with min(c), but there 
+% may be more than one such value. Find them all,
+I = find(c == min(c));
+% and shift each one left so that it starts with min(c).
+J = 0;
+A = zeros(length(I), length(c));
+for k = I;
+   J = J + 1;
+   A(J, :) = circshift(c,[0 -(k-1)]);
+end
+
+% Matrix A contains all the possible candidates for the integer of
+% minimum magnitude. Starting with the 2nd column, succesively find
+% the minima in each column of A. The number of candidates decreases
+% as the seach moves to the right on A.  This is reflected in the
+% elements of J.  When length(J)=1, one candidate remains.  This is
+% the integer of minimum magnitude.  
+[M, N] = size(A);
+J = (1:M)&#39;;
+for k = 2:N
+   D(1:M, 1) = Inf;
+   D(J, 1) = A(J, k);
+   amin = min(A(J, k));
+   J = find(D(:, 1) == amin);
+   if length(J)==1
+      z = A(J, :);
+      return
+   end
+end
+    
+%-------------------------------------------------------------------%
+function d = codediff(fcc, conn)
+%CODEDIFF Computes the first difference of a chain code.
+%   D = CODEDIFF(FCC) computes the first difference of code, FCC. The
+%   code FCC is treated as a circular sequence, so the last element
+%   of D is the difference between the last and first elements of
+%   FCC.  The input code is a 1-by-np vector. 
+%
+%   The first difference is found by counting the number of direction
+%   changes (in a counter-clockwise direction) that separate two
+%   adjacent elements of the code. 
+
+sr = circshift(fcc, [0, -1]); % Shift input left by 1 location.
+delta = sr - fcc;
+d = delta;
+I = find(delta &lt; 0);
+ 
+type = conn;
+switch type
+case 4 % Code is 4-connected
+   d(I) = d(I) + 4;
+case 8 % Code is 8-connected
+   d(I) = d(I) + 8;
+end
+</code></pre></div>
+
+<p><img src="http://xiublog.qiniudn.com/image/2016-12-23-170643.jpg" alt=""></p>
+
+<h3 id="toc_9">boundary image</h3>
+
+<p><img src="http://xiublog.qiniudn.com/image/2016-12-23-170511.jpg" alt=""></p>
+
+<h3 id="toc_10">subsample image</h3>
+
+<p><img src="http://xiublog.qiniudn.com/image/2016-12-23-170545.jpg" alt=""></p>
+
+<h3 id="toc_11">connected lines image</h3>
+
+<p><img src="http://xiublog.qiniudn.com/image/2016-12-23-170609.jpg" alt=""></p>
+
+<h3 id="toc_12">chain code result</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">&gt;&gt; cn_result.fcc
+
+ans =
+
+  Columns 1 through 15
+
+     4     6     4     6     6     4     6     6     6     6     6     0     6     0     0
+
+  Columns 16 through 30
+
+     0     0     0     0     2     2     2     2     2     2     2     2     4     2     4
+
+  Columns 31 through 32
+
+     4     4
+
+&gt;&gt; cn_result.diff
+
+ans =
+
+  Columns 1 through 15
+
+     2     6     2     0     6     2     0     0     0     0     2     6     2     0     0
+
+  Columns 16 through 30
+
+     0     0     0     2     0     0     0     0     0     0     0     2     6     2     0
+
+  Columns 31 through 32
+
+     0     0
+
+&gt;&gt; cn_result.mm
+
+ans =
+
+  Columns 1 through 15
+
+     0     0     0     0     0     0     2     2     2     2     2     2     2     2     4
+
+  Columns 16 through 30
+
+     2     4     4     4     4     6     4     6     6     4     6     6     6     6     6
+
+  Columns 31 through 32
+
+     0     6
+
+&gt;&gt; cn_result.diffmm
+
+ans =
+
+  Columns 1 through 15
+
+     0     0     0     0     0     2     0     0     0     0     0     0     0     2     6
+
+  Columns 16 through 30
+
+     2     0     0     0     2     6     2     0     6     2     0     0     0     0     2
+
+  Columns 31 through 32
+
+     6     2
+
+&gt;&gt; </code></pre></div>
+
+<h2 id="toc_13">Principal Components</h2>
+
+<h3 id="toc_14">pc.m</h3>
+
+<div><pre class="line-numbers"><code class="language-matlab">clear;clc;
+path = &#39;/Users/Personals/Desktop/DIP/assignments/prob10/washingtonDC/&#39;;
+comb_img = [];
+
+for i=1:6
+    wdc = double(imread([path &#39;WashingtonDC_Band&#39; num2str(i) &#39;.tif&#39;]));
+    wdc_col = reshape(wdc,564*564,1);
+    comb_img = [comb_img wdc_col];
+end
+
+comb_img = double(comb_img);
+mu = mean(comb_img,2);
+[coeff,score,latent] = pca(comb_img);
+wdc_pcs = comb_img * coeff;
+pca_result = zeros(564,564,6);
+wdc_rec = bsxfun(@plus,score(:,1:2) * coeff(:,1:2)&#39;,mu);
+rec_result = zeros(size(pca_result));
+diff_result = zeros(size(pca_result));
+comb_result = zeros(size(pca_result));
+
+for i=1:6
+    comb_result(:,:,i) = reshape(comb_img(:,i),564,564);
+    pca_result(:,:,i) = reshape(wdc_pcs(:,i),564,564);
+    rec_result(:,:,i) = reshape(wdc_rec(:,i),564,564);
+    diff_result(:,:,i) = imsubtract(comb_result(:,:,i),rec_result(:,:,i));
+    
+    subplot(2,3,i),imshow(uint8(comb_result(:,:,i)));title([&#39;origin&#39; num2str(i)]);
+    subplot(2,3,i),imshow(uint8(pca_result(:,:,i)));title([&#39;pca&#39; num2str(i)]);
+    subplot(2,3,i),imshow(uint8(rec_result(:,:,i)));title([&#39;rec&#39; num2str(i)]);
+    subplot(2,3,i),imshow(uint8(diff_result(:,:,i)));title([&#39;diff&#39; num2str(i)]);
+end</code></pre></div>
+
+<h3 id="toc_15">original image</h3>
+
+<p><img src="http://xiublog.qiniudn.com/image/2016-12-23-123824.jpg" alt=""></p>
+
+<h3 id="toc_16">principal components</h3>
+
+<p><img src="http://xiublog.qiniudn.com/image/2016-12-23-123940.jpg" alt=""></p>
+
+<h3 id="toc_17">reconstruct image</h3>
+
+<p><img src="http://xiublog.qiniudn.com/image/2016-12-23-124037.jpg" alt=""></p>
+
+<h3 id="toc_18">difference image</h3>
+
+<p><img src="http://xiublog.qiniudn.com/image/2016-12-23-124110.jpg" alt=""></p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.matlab={string:/\B'(?:''|[^'\n])*'/,comment:[/%\{[\s\S]*?\}%/,/%.+/],number:/\b-?(?:\d*\.?\d+(?:[eE][+-]?\d+)?(?:[ij])?|[ij])\b/,keyword:/\b(?:break|case|catch|continue|else|elseif|end|for|function|if|inf|NaN|otherwise|parfor|pause|pi|return|switch|try|while)\b/,"function":/(?!\d)\w+(?=\s*\()/,operator:/\.?[*^\/\\']|[+\-:@]|[<>=~]=?|&&?|\|\|?/,punctuation:/\.{3}|[.,;\[\](){}!]/};
+</script>
+
+<script type="text/javascript">
+!function(){"undefined"!=typeof self&&self.Prism&&self.document&&Prism.hooks.add("complete",function(e){if(e.code){var t=e.element.parentNode,s=/\s*\bline-numbers\b\s*/;if(t&&/pre/i.test(t.nodeName)&&(s.test(t.className)||s.test(e.element.className))&&!e.element.querySelector(".line-numbers-rows")){s.test(e.element.className)&&(e.element.className=e.element.className.replace(s,"")),s.test(t.className)||(t.className+=" line-numbers");var n,a=e.code.match(/\n(?!$)/g),l=a?a.length+1:1,m=new Array(l+1);m=m.join("<span></span>"),n=document.createElement("span"),n.className="line-numbers-rows",n.innerHTML=m,t.hasAttribute("data-start")&&(t.style.counterReset="linenumber "+(parseInt(t.getAttribute("data-start"),10)-1)),e.element.appendChild(n)}}})}();
+</script>
+
+<script type="text/javascript">
+!function(){if("undefined"!=typeof self&&self.Prism&&self.document){var e={html:"HTML",xml:"XML",svg:"SVG",mathml:"MathML",css:"CSS",clike:"C-like",javascript:"JavaScript",abap:"ABAP",actionscript:"ActionScript",apacheconf:"Apache Configuration",apl:"APL",applescript:"AppleScript",asciidoc:"AsciiDoc",aspnet:"ASP.NET (C#)",autoit:"AutoIt",autohotkey:"AutoHotkey",basic:"BASIC",csharp:"C#",cpp:"C++",coffeescript:"CoffeeScript","css-extras":"CSS Extras",fsharp:"F#",glsl:"GLSL",http:"HTTP",inform7:"Inform 7",json:"JSON",latex:"LaTeX",lolcode:"LOLCODE",matlab:"MATLAB",mel:"MEL",nasm:"NASM",nginx:"nginx",nsis:"NSIS",objectivec:"Objective-C",ocaml:"OCaml",parigp:"PARI/GP",php:"PHP","php-extras":"PHP Extras",powershell:"PowerShell",jsx:"React JSX",rest:"reST (reStructuredText)",sas:"SAS",sass:"Sass (Sass)",scss:"Sass (Scss)",sql:"SQL",typescript:"TypeScript",vhdl:"VHDL",vim:"vim",wiki:"Wiki markup",yaml:"YAML"};Prism.hooks.add("before-highlight",function(s){var a=s.element.parentNode;if(a&&/pre/i.test(a.nodeName)){var t,i,r=a.getAttribute("data-language")||e[s.language]||s.language.substring(0,1).toUpperCase()+s.language.substring(1),l=a.previousSibling;l&&/\s*\bprism-show-language\b\s*/.test(l.className)&&l.firstChild&&/\s*\bprism-show-language-label\b\s*/.test(l.firstChild.className)?i=l.firstChild:(t=document.createElement("div"),i=document.createElement("div"),i.className="prism-show-language-label",t.className="prism-show-language",t.appendChild(i),a.parentNode.insertBefore(t,a)),i.innerHTML=r}})}}();
+</script>
+
+<script type="text/x-mathjax-config">
+(function () {
+
+MathJax.Hub.Config({
+	'showProcessingMessages': false,
+	'messageStyle': 'none'
+});
+
+if (typeof MathJaxListener !== 'undefined') {
+	MathJax.Hub.Register.StartupHook('End', function () {
+		MathJaxListener.invokeCallbackForKey_('End');
+	});
+}
+
+})();
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>
